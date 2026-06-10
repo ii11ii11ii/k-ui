@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "private": true,
   "type": "module",
-  "description": "Кометум — монорепо UI-библиотеки. Пакет публикуется из packages/core (@ii11ii11ii/k-ui).",
+  "description": "Кометум — монорепо UI-библиотеки. Пакет публикуется из packages/core (@ii11/k-ui).",
   "workspaces": [
     "packages/*"
   ],
