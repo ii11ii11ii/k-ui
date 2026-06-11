@@ -8,8 +8,8 @@ const extra = computed(() => Math.max(0, props.names.length - props.max))
 </script>
 
 <template>
-  <div class="kui-avatar-group">
-    <span v-for="(n, i) in shown" :key="i" class="kui-avatar-group-item"><Avatar :name="n" :size="size" /></span>
-    <span v-if="extra" class="kui-avatar-more" :style="{ width: size + 'px', height: size + 'px' }">+{{ extra }}</span>
+  <div class="k-avatar-group">
+    <span v-for="(n, i) in shown" :key="i" class="k-avatar-group-item"><Avatar :name="n" :size="size" /></span>
+    <span v-if="extra" class="k-avatar-more" :style="{ width: size + 'px', height: size + 'px' }">+{{ extra }}</span>
   </div>
 </template>

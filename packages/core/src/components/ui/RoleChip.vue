@@ -18,7 +18,7 @@ const style = computed(() => (brand.value || !m.value) ? null : { background: t.
 
 <template>
   <span v-if="!m" class="cell-dash">—</span>
-  <span v-else :class="['role-chip', 'role-' + size, brand ? 'is-brand' : '']" :style="style" :title="m.label">
+  <span v-else :class="['k-role-chip', 'role-' + size, brand ? 'is-brand' : '']" :style="style" :title="m.label">
     <Icon :name="m.icon || 'shield'" :size="size === 'sm' ? 11 : 13" />
     <span class="truncate">{{ m.label }}</span>
   </span>

@@ -12,14 +12,14 @@ onMounted(start); onBeforeUnmount(stop); watch(() => props.autoplay, start)
 </script>
 
 <template>
-  <div class="kui-carousel" @mouseenter="stop" @mouseleave="start">
-    <div class="kui-carousel-track" :style="{ transform: 'translateX(-' + (idx * 100) + '%)' }">
-      <div v-for="(it, i) in items" :key="i" class="kui-carousel-slide"><slot name="slide" :item="it" :index="i">{{ it }}</slot></div>
+  <div class="k-carousel" @mouseenter="stop" @mouseleave="start">
+    <div class="k-carousel-track" :style="{ transform: 'translateX(-' + (idx * 100) + '%)' }">
+      <div v-for="(it, i) in items" :key="i" class="k-carousel-slide"><slot name="slide" :item="it" :index="i">{{ it }}</slot></div>
     </div>
-    <button v-if="arrows && items.length > 1" class="kui-carousel-arrow is-prev" aria-label="Назад" @click="go(idx - 1)"><Icon name="chevronLeft" :size="18" /></button>
-    <button v-if="arrows && items.length > 1" class="kui-carousel-arrow is-next" aria-label="Вперёд" @click="go(idx + 1)"><Icon name="chevronRight" :size="18" /></button>
-    <div v-if="dots && items.length > 1" class="kui-carousel-dots">
-      <button v-for="(it, i) in items" :key="i" :class="['kui-carousel-dot', i === idx ? 'is-on' : '']" @click="go(i)"></button>
+    <button v-if="arrows && items.length > 1" class="k-carousel-arrow is-prev" aria-label="Назад" @click="go(idx - 1)"><Icon name="chevronLeft" :size="18" /></button>
+    <button v-if="arrows && items.length > 1" class="k-carousel-arrow is-next" aria-label="Вперёд" @click="go(idx + 1)"><Icon name="chevronRight" :size="18" /></button>
+    <div v-if="dots && items.length > 1" class="k-carousel-dots">
+      <button v-for="(it, i) in items" :key="i" :class="['k-carousel-dot', i === idx ? 'is-on' : '']" @click="go(i)"></button>
     </div>
   </div>
 </template>

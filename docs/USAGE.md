@@ -3,7 +3,7 @@
 ## 1. Установка
 
 ```bash
-npm install @ii11ii11ii/k-ui
+npm install @ii11/k-ui
 # peer-зависимость: vue@^3.4
 ```
 
@@ -14,13 +14,13 @@ npm install @ii11ii11ii/k-ui
 Стили поставляются единым файлом и подключаются в корне приложения:
 
 ```ts
-import '@ii11ii11ii/k-ui/style.css'
+import '@ii11/k-ui/style.css'
 ```
 
 Либо исходный SCSS (если хотите импортировать токены в свой Sass-пайплайн):
 
 ```scss
-@use '@ii11ii11ii/k-ui/scss' as *;
+@use '@ii11/k-ui/scss' as *;
 ```
 
 ## 3. Два способа подключения компонентов
@@ -28,8 +28,8 @@ import '@ii11ii11ii/k-ui/style.css'
 ### А. Глобальный плагин — всё сразу
 
 ```ts
-import KometumUI from '@ii11ii11ii/k-ui'
-import '@ii11ii11ii/k-ui/style.css'
+import KometumUI from '@ii11/k-ui'
+import '@ii11/k-ui/style.css'
 
 app.use(KometumUI)
 // опции:
@@ -41,7 +41,7 @@ app.use(KometumUI, { prefix: 'K', directives: true })
 
 ```vue
 <script setup lang="ts">
-import { Icon, DataTable, FormField, Modal, useFormGuard } from '@ii11ii11ii/k-ui'
+import { KIcon, KDataTable, KFormField, KModal, useFormGuard } from '@ii11/k-ui'
 </script>
 ```
 
@@ -113,7 +113,7 @@ StatusBadge, TonePill, CollapsibleKpis, Calendar.
 ```vue
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { FormField, FormErrorHint, useFormGuard } from '@ii11ii11ii/k-ui'
+import { KFormField, KFormErrorHint, useFormGuard } from '@ii11/k-ui'
 
 const f = reactive({ name: '', inn: '' })
 const guard = useFormGuard(f, [
@@ -124,10 +124,10 @@ function save() { if (guard.check()) emit('save', { ...f }) }
 </script>
 
 <template>
-  <FormField label="Название" v-model:value="f.name" :invalid="guard.invalid('name')" />
-  <FormField label="ИНН" v-model:value="f.inn" :invalid="guard.invalid('inn')" />
-  <FormErrorHint :missing="guard.missing" />
-  <button class="btn" @click="save">Сохранить</button>
+  <KFormField label="Название" v-model:value="f.name" :invalid="guard.invalid('name')" />
+  <KFormField label="ИНН" v-model:value="f.inn" :invalid="guard.invalid('inn')" />
+  <KFormErrorHint :missing="guard.missing" />
+  <button class="k-button" @click="save">Сохранить</button>
 </template>
 ```
 
@@ -135,7 +135,7 @@ function save() { if (guard.check()) emit('save', { ...f }) }
 
 ```vue
 <script setup lang="ts">
-import { DataTable, useTableColumns } from '@ii11ii11ii/k-ui'
+import { KDataTable, useTableColumns } from '@ii11/k-ui'
 const columns = [
   { key: 'name', label: 'Клиент', sortable: true },
   { key: 'sum', label: 'Сумма', align: 'right' },
@@ -144,19 +144,19 @@ const { state, api } = useTableColumns('clients_v1', columns)
 </script>
 
 <template>
-  <DataTable :columns="columns" :rows="rows" :state="state">
+  <KDataTable :columns="columns" :rows="rows" :state="state">
     <template #cell="{ column, row }">
       <span v-if="column.key === 'name'">{{ row.name }}</span>
     </template>
     <template #expanded="{ row }">…</template>
-  </DataTable>
+  </KDataTable>
 </template>
 ```
 
 ### Подтверждение удаления
 
 ```ts
-import { useConfirm } from '@ii11ii11ii/k-ui'
+import { useConfirm } from '@ii11/k-ui'
 const { confirmDelete } = useConfirm()
 if (await confirmDelete({ message: 'Удалить запись?' })) remove()
 // один раз смонтируйте <ConfirmHost /> в корне приложения

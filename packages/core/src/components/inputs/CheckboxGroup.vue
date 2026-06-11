@@ -20,7 +20,7 @@ provide(CheckboxGroupKey, { get value(){ return props.modelValue }, toggle, get 
 </script>
 
 <template>
-  <div :class="['kui-check-group', inline ? 'is-inline' : '']">
+  <div :class="['k-check-group', inline ? 'is-inline' : '']">
     <slot><Checkbox v-for="o in options" :key="o.value" :value="o.value" :label="o.label" :disabled="o.disabled" /></slot>
   </div>
 </template>

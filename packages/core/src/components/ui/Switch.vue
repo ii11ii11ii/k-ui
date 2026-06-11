@@ -13,8 +13,8 @@ function toggle() { if (!props.disabled) emit('update:checked', !props.checked) 
 
 <template>
   <button v-if="!label" type="button" role="switch" :aria-checked="checked"
-    :class="['switch', checked ? 'is-on' : '']" :disabled="disabled" @click="toggle">
-    <span class="switch-thumb"></span>
+    :class="['k-switch', checked ? 'is-on' : '']" :disabled="disabled" @click="toggle">
+    <span class="k-switch-thumb"></span>
   </button>
   <div v-else :class="['switch-row', disabled ? 'is-disabled' : '']" @click.stop>
     <span class="switch-row-text">
@@ -22,8 +22,8 @@ function toggle() { if (!props.disabled) emit('update:checked', !props.checked) 
       <span v-if="hint" class="switch-row-hint">{{ hint }}</span>
     </span>
     <button type="button" role="switch" :aria-checked="checked"
-      :class="['switch', checked ? 'is-on' : '']" :disabled="disabled" @click="toggle">
-      <span class="switch-thumb"></span>
+      :class="['k-switch', checked ? 'is-on' : '']" :disabled="disabled" @click="toggle">
+      <span class="k-switch-thumb"></span>
     </button>
   </div>
 </template>

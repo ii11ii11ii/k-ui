@@ -8,13 +8,13 @@ const dim = (v: any) => (typeof v === 'number' ? v + 'px' : v)
 </script>
 
 <template>
-  <span class="kui-image">
+  <span class="k-image">
     <img :src="src" :alt="alt" :class="preview ? 'is-clickable' : ''"
       :style="{ width: dim(width) || '100%', height: dim(height) || 'auto', objectFit: fit, borderRadius: dim(radius) }" @click="preview && (open = true)" />
     <teleport to="body">
-      <div v-if="open" class="kui-image-overlay" @click="open = false">
+      <div v-if="open" class="k-image-overlay" @click="open = false">
         <img :src="src" :alt="alt" />
-        <button class="kui-image-close" aria-label="Закрыть"><Icon name="close" :size="20" /></button>
+        <button class="k-image-close" aria-label="Закрыть"><Icon name="close" :size="20" /></button>
       </div>
     </teleport>
   </span>

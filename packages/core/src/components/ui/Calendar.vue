@@ -19,7 +19,7 @@ const days = computed(() => {
 })
 function inRange(d) { return from.value && to.value && d >= new Date(from.value.getFullYear(), from.value.getMonth(), from.value.getDate()) && d <= new Date(to.value.getFullYear(), to.value.getMonth(), to.value.getDate()) }
 function cls(d) {
-  return ['cal-day',
+  return ['k-calendar-day',
     d.getMonth() !== view.value.getMonth() ? 'is-out' : '',
     kmtSameDay(d, KMT_TODAY) ? 'is-today' : '',
     inRange(d) ? 'is-range' : '',
@@ -29,14 +29,14 @@ function shift(n) { view.value = new Date(view.value.getFullYear(), view.value.g
 </script>
 
 <template>
-  <div class="cal">
-    <div class="cal-head">
-      <button class="cal-nav" title="Предыдущий месяц" @click="shift(-1)"><Icon name="chevronLeft" :size="16" /></button>
-      <span class="cal-title">{{ KMT_MONTHS[view.getMonth()] }} {{ view.getFullYear() }}</span>
-      <button class="cal-nav" title="Следующий месяц" @click="shift(1)"><Icon name="chevronRight" :size="16" /></button>
+  <div class="k-calendar">
+    <div class="k-calendar-head">
+      <button class="k-calendar-nav" title="Предыдущий месяц" @click="shift(-1)"><Icon name="chevronLeft" :size="16" /></button>
+      <span class="k-calendar-title">{{ KMT_MONTHS[view.getMonth()] }} {{ view.getFullYear() }}</span>
+      <button class="k-calendar-nav" title="Следующий месяц" @click="shift(1)"><Icon name="chevronRight" :size="16" /></button>
     </div>
-    <div class="cal-grid cal-wd"><span v-for="w in KMT_WD" :key="w" class="cal-wd-c">{{ w }}</span></div>
-    <div class="cal-grid">
+    <div class="k-calendar-grid k-calendar-wd"><span v-for="w in KMT_WD" :key="w" class="k-calendar-wd-c">{{ w }}</span></div>
+    <div class="k-calendar-grid">
       <button v-for="(d, i) in days" :key="i" :class="cls(d)" @click="emit('pick', d)">{{ d.getDate() }}</button>
     </div>
   </div>

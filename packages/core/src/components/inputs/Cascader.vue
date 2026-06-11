@@ -23,16 +23,16 @@ function pick(colIndex: number, node: any){
 </script>
 
 <template>
-  <div class="kui-cascader">
-    <button type="button" :class="['kui-dp-field', disabled ? 'is-disabled' : '']" :disabled="disabled" @click="open = !open">
-      <span :class="['kui-dp-text', !labels.length ? 'is-ph' : '']">{{ labels.length ? labels.join(' / ') : placeholder }}</span>
-      <Icon name="chevronDown" :size="15" class="kui-dp-ico" />
+  <div class="k-cascader">
+    <button type="button" :class="['k-dp-field', disabled ? 'is-disabled' : '']" :disabled="disabled" @click="open = !open">
+      <span :class="['k-dp-text', !labels.length ? 'is-ph' : '']">{{ labels.length ? labels.join(' / ') : placeholder }}</span>
+      <Icon name="chevronDown" :size="15" class="k-dp-ico" />
     </button>
     <template v-if="open">
-      <div class="kui-pop-backdrop" @click="open = false"></div>
-      <div class="kui-cascader-pop">
-        <div v-for="(col, ci) in columns" :key="ci" class="kui-cascader-col">
-          <button v-for="n in col" :key="n.value" type="button" :class="['kui-cascader-item', modelValue[ci] === n.value ? 'is-on' : '']" @click="pick(ci, n)">
+      <div class="k-pop-backdrop" @click="open = false"></div>
+      <div class="k-cascader-pop">
+        <div v-for="(col, ci) in columns" :key="ci" class="k-cascader-col">
+          <button v-for="n in col" :key="n.value" type="button" :class="['k-cascader-item', modelValue[ci] === n.value ? 'is-on' : '']" @click="pick(ci, n)">
             <span>{{ n.label }}</span>
             <Icon v-if="n.children && n.children.length" name="chevronRight" :size="13" />
           </button>

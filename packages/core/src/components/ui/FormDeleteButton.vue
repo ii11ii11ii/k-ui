@@ -15,14 +15,14 @@ const emit = defineEmits(['delete', 'deactivate', 'reactivate'])
 
 <template>
   <div v-if="guard" class="so-foot-del-wrap">
-    <button type="button" class="btn btn-danger-ghost so-foot-del" :disabled="!guard.ok"
+    <button type="button" class="k-button k-button-danger-ghost so-foot-del" :disabled="!guard.ok"
       :title="guard.ok ? '' : (guard.reason || 'Удаление недоступно')" :aria-disabled="!guard.ok"
       @click="guard.ok ? emit('delete') : null">
       <Icon name="trash" :size="15" /><span>{{ label }}</span>
     </button>
     <template v-if="!guard.ok && guard.deactivate">
-      <button v-if="isActive === false" type="button" class="btn btn-ghost btn-sm so-foot-react" @click="emit('reactivate')"><Icon name="refresh" :size="14" /><span>Активировать</span></button>
-      <button v-else type="button" class="btn btn-ghost btn-sm so-foot-react" @click="emit('deactivate')"><Icon name="power" :size="14" /><span>{{ deactivateLabel }}</span></button>
+      <button v-if="isActive === false" type="button" class="k-button k-button-ghost k-button-sm so-foot-react" @click="emit('reactivate')"><Icon name="refresh" :size="14" /><span>Активировать</span></button>
+      <button v-else type="button" class="k-button k-button-ghost k-button-sm so-foot-react" @click="emit('deactivate')"><Icon name="power" :size="14" /><span>{{ deactivateLabel }}</span></button>
     </template>
     <span v-if="!guard.ok" class="so-foot-locked" role="note"><Icon name="lock" :size="13" />{{ guard.reason }}</span>
   </div>

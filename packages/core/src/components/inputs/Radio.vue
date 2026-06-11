@@ -20,9 +20,9 @@ function pick(){
 </script>
 
 <template>
-  <label :class="['kui-radio', checked ? 'is-on' : '', isDisabled ? 'is-disabled' : '']">
-    <span class="kui-radio-dot" role="radio" :aria-checked="checked" tabindex="0"
+  <label :class="['k-radio', checked ? 'is-on' : '', isDisabled ? 'is-disabled' : '']">
+    <span class="k-radio-dot" role="radio" :aria-checked="checked" tabindex="0"
       @click="pick" @keydown.space.prevent="pick" @keydown.enter.prevent="pick"></span>
-    <span v-if="label || $slots.default" class="kui-radio-label"><slot>{{ label }}</slot></span>
+    <span v-if="label || $slots.default" class="k-radio-label"><slot>{{ label }}</slot></span>
   </label>
 </template>

@@ -15,12 +15,12 @@ const color = computed(() => props.tone ? 'var(--st-' + props.tone + '-dot)' : '
 </script>
 
 <template>
-  <div class="kui-progress-circle" :style="{ width: size + 'px', height: size + 'px' }">
+  <div class="k-progress-circle" :style="{ width: size + 'px', height: size + 'px' }">
     <svg :width="size" :height="size" :viewBox="'0 0 ' + size + ' ' + size">
       <circle :cx="size / 2" :cy="size / 2" :r="r" fill="none" :stroke-width="stroke" stroke="var(--surface-3)" />
       <circle :cx="size / 2" :cy="size / 2" :r="r" fill="none" :stroke-width="stroke" :stroke="color" stroke-linecap="round"
         :stroke-dasharray="circ" :stroke-dashoffset="dash" :transform="'rotate(-90 ' + (size / 2) + ' ' + (size / 2) + ')'" />
     </svg>
-    <span v-if="showLabel" class="kui-progress-circle-label mono">{{ Math.round(value) }}%</span>
+    <span v-if="showLabel" class="k-progress-circle-label mono">{{ Math.round(value) }}%</span>
   </div>
 </template>

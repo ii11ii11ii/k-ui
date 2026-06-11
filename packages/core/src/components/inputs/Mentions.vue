@@ -22,10 +22,10 @@ function insert(o: any){
 </script>
 
 <template>
-  <div class="kui-mentions">
-    <textarea ref="ta" class="fld fld-area" :rows="rows" :value="modelValue" :placeholder="placeholder" @input="onInput"></textarea>
-    <div v-if="list.length" class="kui-mentions-pop">
-      <button v-for="o in list" :key="o.value" type="button" class="kui-mentions-item" @mousedown.prevent="insert(o)">{{ trigger }}{{ o.label }}</button>
+  <div class="k-mentions">
+    <textarea ref="ta" class="k-input-field k-input-field-area" :rows="rows" :value="modelValue" :placeholder="placeholder" @input="onInput"></textarea>
+    <div v-if="list.length" class="k-mentions-pop">
+      <button v-for="o in list" :key="o.value" type="button" class="k-mentions-item" @mousedown.prevent="insert(o)">{{ trigger }}{{ o.label }}</button>
     </div>
   </div>
 </template>

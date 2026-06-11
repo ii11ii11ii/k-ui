@@ -9,7 +9,7 @@ const total = computed(() => n.value + props.margin * 2)
 </script>
 
 <template>
-  <svg v-if="n" :width="size" :height="size" :viewBox="'0 0 ' + total + ' ' + total" class="kui-qr" shape-rendering="crispEdges">
+  <svg v-if="n" :width="size" :height="size" :viewBox="'0 0 ' + total + ' ' + total" class="k-qr" shape-rendering="crispEdges">
     <rect :width="total" :height="total" :fill="light" />
     <template v-for="(row, r) in grid" :key="r">
       <rect v-for="(v, c) in row" v-show="v" :key="c" :x="c + margin" :y="r + margin" width="1" height="1" :fill="dark" />

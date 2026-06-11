@@ -9,10 +9,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="kui-empty">
-    <span class="kui-empty-ico"><Icon :name="icon" :size="26" /></span>
-    <div class="kui-empty-title">{{ title }}</div>
-    <div v-if="hint || $slots.hint" class="kui-empty-hint"><slot name="hint">{{ hint }}</slot></div>
-    <div v-if="$slots.default" class="kui-empty-actions"><slot /></div>
+  <div class="k-empty">
+    <span class="k-empty-ico"><Icon :name="icon" :size="26" /></span>
+    <div class="k-empty-title">{{ title }}</div>
+    <div v-if="hint || $slots.hint" class="k-empty-hint"><slot name="hint">{{ hint }}</slot></div>
+    <div v-if="$slots.default" class="k-empty-actions"><slot /></div>
   </div>
 </template>

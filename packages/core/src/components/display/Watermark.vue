@@ -14,5 +14,5 @@ const bg = computed(() => {
 </script>
 
 <template>
-  <div class="kui-watermark"><slot /><div class="kui-watermark-layer" :style="{ backgroundImage: bg }"></div></div>
+  <div class="k-watermark"><slot /><div class="k-watermark-layer" :style="{ backgroundImage: bg }"></div></div>
 </template>

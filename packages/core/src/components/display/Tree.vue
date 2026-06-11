@@ -7,7 +7,7 @@ function onSelect(n: any){ emit('select', n); emit('update:selectedKey', n.key) 
 </script>
 
 <template>
-  <div class="kui-tree" role="tree">
+  <div class="k-tree" role="tree">
     <TreeNode v-for="n in nodes" :key="n.key" :node="n" :selected-key="selectedKey" @select="onSelect" @toggle="$emit('toggle', $event)" />
   </div>
 </template>

@@ -10,9 +10,9 @@ const show = ref(false)
 </script>
 
 <template>
-  <span class="kui-tooltip-wrap" @mouseenter="show = true" @mouseleave="show = false" @focusin="show = true" @focusout="show = false">
+  <span class="k-tooltip-wrap" @mouseenter="show = true" @mouseleave="show = false" @focusin="show = true" @focusout="show = false">
     <slot />
-    <span v-if="!disabled && (content || $slots.content)" :class="['kui-tooltip-pop', 'kui-ttp-' + placement, show ? 'is-show' : '']" role="tooltip">
+    <span v-if="!disabled && (content || $slots.content)" :class="['k-tooltip-pop', 'k-ttp-' + placement, show ? 'is-show' : '']" role="tooltip">
       <slot name="content">{{ content }}</slot>
     </span>
   </span>

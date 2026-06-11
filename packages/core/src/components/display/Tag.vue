@@ -16,9 +16,9 @@ const style = computed(() => t.value ? { background: t.value.bg, color: t.value.
 </script>
 
 <template>
-  <span :class="['kui-tag', 'kui-tag-' + size, tone ? '' : 'is-default']" :style="style">
+  <span :class="['k-tag', 'k-tag-' + size, tone ? '' : 'is-default']" :style="style">
     <Icon v-if="icon" :name="icon" :size="size === 'sm' ? 11 : 13" />
     <span><slot>{{ label }}</slot></span>
-    <button v-if="closable" type="button" class="kui-tag-close" aria-label="Удалить" @click.stop="$emit('close')"><Icon name="close" :size="12" /></button>
+    <button v-if="closable" type="button" class="k-tag-close" aria-label="Удалить" @click.stop="$emit('close')"><Icon name="close" :size="12" /></button>
   </span>
 </template>

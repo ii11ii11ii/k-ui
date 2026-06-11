@@ -46,16 +46,16 @@ const readText = computed(() => {
 
 <template>
   <!-- create -->
-  <label v-if="mode === 'create'" :class="['fld-wrap', full ? 'fld-full' : '', disabled ? 'is-disabled' : '', invalid ? 'is-invalid' : '']">
-    <span class="fld-label">{{ label }}<em v-if="req" class="req">*</em><em v-if="invalid" class="fld-req-hint">обязательное поле</em></span>
-    <select v-if="editor === 'select'" :class="['fld', mono ? 'mono' : '']" :value="value" :disabled="disabled" @change="set($event.target.value)">
+  <label v-if="mode === 'create'" :class="['k-input-field-wrap', full ? 'k-input-field-full' : '', disabled ? 'is-disabled' : '', invalid ? 'is-invalid' : '']">
+    <span class="k-input-field-label">{{ label }}<em v-if="req" class="req">*</em><em v-if="invalid" class="k-input-field-req-hint">обязательное поле</em></span>
+    <select v-if="editor === 'select'" :class="['k-input-field', mono ? 'mono' : '']" :value="value" :disabled="disabled" @change="set($event.target.value)">
       <option v-for="o in options" :key="o.value" :value="o.value">{{ o.label }}</option>
     </select>
     <ComboBox v-else-if="editor === 'combo'" :value="value" :options="options" :icon="icon" :allow-clear="allowClear" :disabled="disabled"
       :placeholder="placeholder || 'Выбрать'" @update:value="set" />
-    <textarea v-else-if="editor === 'textarea'" class="fld fld-area" :rows="3" :value="value" :placeholder="placeholder" :disabled="disabled" @input="set($event.target.value)"></textarea>
-    <input v-else-if="editor === 'date' || editor === 'datetime'" :class="['fld', mono ? 'mono' : '']" :type="editor === 'datetime' ? 'datetime-local' : 'date'" :value="value || ''" :disabled="disabled" @input="set($event.target.value)" />
-    <input v-else :class="['fld', mono ? 'mono' : '']" :type="editor === 'number' ? 'number' : 'text'" :value="value" :placeholder="placeholder" :disabled="disabled" @input="set($event.target.value)" />
+    <textarea v-else-if="editor === 'textarea'" class="k-input-field k-input-field-area" :rows="3" :value="value" :placeholder="placeholder" :disabled="disabled" @input="set($event.target.value)"></textarea>
+    <input v-else-if="editor === 'date' || editor === 'datetime'" :class="['k-input-field', mono ? 'mono' : '']" :type="editor === 'datetime' ? 'datetime-local' : 'date'" :value="value || ''" :disabled="disabled" @input="set($event.target.value)" />
+    <input v-else :class="['k-input-field', mono ? 'mono' : '']" :type="editor === 'number' ? 'number' : 'text'" :value="value" :placeholder="placeholder" :disabled="disabled" @input="set($event.target.value)" />
   </label>
 
   <!-- edit / view -->
@@ -63,10 +63,10 @@ const readText = computed(() => {
     <span class="frow-label"><Icon v-if="icon" :name="icon" :size="14" class="frow-ico" />{{ label }}<em v-if="req && mode !== 'view'" class="req">*</em><em v-if="invalid" class="frow-req-hint">обязательное</em></span>
     <div class="frow-val">
       <span v-if="mode === 'view' || disabled" :class="['frow-read', empty ? 'is-empty' : '', mono ? 'mono' : '', disabled ? 'is-locked' : '']">
-        <i v-if="prefix && !empty" class="ie-prefix">{{ prefix }}</i>
+        <i v-if="prefix && !empty" class="k-inline-edit-prefix">{{ prefix }}</i>
         <slot v-if="slots.display && !empty" name="display" :value="value">{{ readText }}</slot>
         <template v-else>{{ readText }}</template>
-        <i v-if="suffix && !empty" class="ie-suffix">{{ suffix }}</i>
+        <i v-if="suffix && !empty" class="k-inline-edit-suffix">{{ suffix }}</i>
       </span>
       <ComboBox v-else-if="editor === 'combo'" variant="inline" :value="value" :options="options" :allow-clear="allowClear"
         :placeholder="placeholder || 'Указать'" @update:value="set" />

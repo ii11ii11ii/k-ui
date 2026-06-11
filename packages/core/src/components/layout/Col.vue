@@ -17,5 +17,5 @@ const style = computed(() => {
 </script>
 
 <template>
-  <div class="kui-col" :style="style"><slot /></div>
+  <div class="k-col" :style="style"><slot /></div>
 </template>

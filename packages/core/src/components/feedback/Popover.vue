@@ -13,11 +13,11 @@ defineExpose({ open, toggle, close })
 </script>
 
 <template>
-  <span class="kui-pop-wrap">
-    <span class="kui-pop-trigger" @click="toggle"><slot :open="open" :toggle="toggle" /></span>
+  <span class="k-pop-wrap">
+    <span class="k-pop-trigger" @click="toggle"><slot :open="open" :toggle="toggle" /></span>
     <template v-if="open">
-      <div class="kui-pop-backdrop" @click="close"></div>
-      <div :class="['kui-pop-panel', 'kui-pop-' + placement]" :style="{ width: typeof width === 'number' ? width + 'px' : width }">
+      <div class="k-pop-backdrop" @click="close"></div>
+      <div :class="['k-pop-panel', 'k-pop-' + placement]" :style="{ width: typeof width === 'number' ? width + 'px' : width }">
         <slot name="content" :close="close" />
       </div>
     </template>

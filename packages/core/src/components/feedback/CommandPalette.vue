@@ -25,19 +25,19 @@ function onKey(e: KeyboardEvent){
 
 <template>
   <teleport to="body">
-    <div v-if="open" class="kui-cmdk-root" @click="close">
-      <div class="kui-cmdk" @click.stop>
-        <div class="kui-cmdk-search"><Icon name="search" :size="17" /><input ref="input" v-model="q" :placeholder="placeholder" @keydown="onKey" /><kbd class="kui-cmdk-esc">ESC</kbd></div>
-        <div class="kui-cmdk-list">
+    <div v-if="open" class="k-cmdk-root" @click="close">
+      <div class="k-cmdk" @click.stop>
+        <div class="k-cmdk-search"><Icon name="search" :size="17" /><input ref="input" v-model="q" :placeholder="placeholder" @keydown="onKey" /><kbd class="k-cmdk-esc">ESC</kbd></div>
+        <div class="k-cmdk-list">
           <template v-for="(its, g) in groups" :key="g">
-            <div v-if="g" class="kui-cmdk-group">{{ g }}</div>
-            <button v-for="it in its" :key="it.id" :class="['kui-cmdk-item', flatIndex(it) === idx ? 'is-active' : '']" @mousemove="idx = flatIndex(it)" @click="run(it)">
-              <Icon v-if="it.icon" :name="it.icon" :size="16" class="kui-cmdk-ico" />
-              <span class="kui-cmdk-title">{{ it.title }}</span>
-              <span v-if="it.sub" class="kui-cmdk-sub">{{ it.sub }}</span>
+            <div v-if="g" class="k-cmdk-group">{{ g }}</div>
+            <button v-for="it in its" :key="it.id" :class="['k-cmdk-item', flatIndex(it) === idx ? 'is-active' : '']" @mousemove="idx = flatIndex(it)" @click="run(it)">
+              <Icon v-if="it.icon" :name="it.icon" :size="16" class="k-cmdk-ico" />
+              <span class="k-cmdk-title">{{ it.title }}</span>
+              <span v-if="it.sub" class="k-cmdk-sub">{{ it.sub }}</span>
             </button>
           </template>
-          <div v-if="!filtered.length" class="kui-cmdk-empty">{{ emptyText }}</div>
+          <div v-if="!filtered.length" class="k-cmdk-empty">{{ emptyText }}</div>
         </div>
       </div>
     </div>

@@ -10,18 +10,18 @@ function status(i: number){ return i < props.current ? 'done' : (i === props.cur
 </script>
 
 <template>
-  <div :class="['kui-steps', 'kui-steps-' + direction]">
-    <div v-for="(s, i) in steps" :key="i" :class="['kui-step', 'is-' + status(i)]">
-      <div class="kui-step-marker">
+  <div :class="['k-steps', 'k-steps-' + direction]">
+    <div v-for="(s, i) in steps" :key="i" :class="['k-step', 'is-' + status(i)]">
+      <div class="k-step-marker">
         <Icon v-if="status(i) === 'done'" name="checkMark" :size="14" />
         <Icon v-else-if="s.icon" :name="s.icon" :size="14" />
         <span v-else>{{ i + 1 }}</span>
       </div>
-      <div class="kui-step-main">
-        <div class="kui-step-title">{{ s.title }}</div>
-        <div v-if="s.description" class="kui-step-desc">{{ s.description }}</div>
+      <div class="k-step-main">
+        <div class="k-step-title">{{ s.title }}</div>
+        <div v-if="s.description" class="k-step-desc">{{ s.description }}</div>
       </div>
-      <div v-if="i < steps.length - 1" class="kui-step-line"></div>
+      <div v-if="i < steps.length - 1" class="k-step-line"></div>
     </div>
   </div>
 </template>

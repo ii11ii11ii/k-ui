@@ -12,9 +12,9 @@ function setM(e: any){ const v = (hh.value || '00') + ':' + e.target.value; emit
 </script>
 
 <template>
-  <div :class="['kui-timepicker', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
-    <select class="kui-tp-sel" :value="hh" :disabled="disabled" @change="setH"><option value="" disabled>чч</option><option v-for="h in hours" :key="h" :value="h">{{ h }}</option></select>
-    <span class="kui-tp-sep">:</span>
-    <select class="kui-tp-sel" :value="mm" :disabled="disabled" @change="setM"><option value="" disabled>мм</option><option v-for="m in minutes" :key="m" :value="m">{{ m }}</option></select>
+  <div :class="['k-timepicker', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
+    <select class="k-tp-sel" :value="hh" :disabled="disabled" @change="setH"><option value="" disabled>чч</option><option v-for="h in hours" :key="h" :value="h">{{ h }}</option></select>
+    <span class="k-tp-sep">:</span>
+    <select class="k-tp-sel" :value="mm" :disabled="disabled" @change="setM"><option value="" disabled>мм</option><option v-for="m in minutes" :key="m" :value="m">{{ m }}</option></select>
   </div>
 </template>

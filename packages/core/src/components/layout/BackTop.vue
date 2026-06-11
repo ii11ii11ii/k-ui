@@ -12,8 +12,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 <template>
   <teleport to="body">
-    <transition name="kui-fade">
-      <button v-if="show" class="kui-backtop" :style="{ right: right + 'px', bottom: bottom + 'px' }" aria-label="Наверх" @click="toTop">
+    <transition name="k-fade">
+      <button v-if="show" class="k-backtop" :style="{ right: right + 'px', bottom: bottom + 'px' }" aria-label="Наверх" @click="toTop">
         <Icon name="chevronDown" :size="20" style="transform:rotate(180deg)" />
       </button>
     </transition>

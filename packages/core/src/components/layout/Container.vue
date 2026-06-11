@@ -5,5 +5,5 @@ const maxw: Record<string,string> = { sm: '640px', md: '820px', lg: '1080px', xl
 </script>
 
 <template>
-  <div :class="['kui-container', padded ? 'is-padded' : '']" :style="{ maxWidth: maxw[size] || maxw.lg }"><slot /></div>
+  <div :class="['k-container', padded ? 'is-padded' : '']" :style="{ maxWidth: maxw[size] || maxw.lg }"><slot /></div>
 </template>

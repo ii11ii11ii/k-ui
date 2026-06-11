@@ -22,15 +22,15 @@ const open = ref(false)
     <IconBtn name="columns" label="Настройка колонок" :active="open" @click="open = true" />
     <teleport to="body">
       <div v-if="open" class="sheet-overlay" @mousedown="open = false">
-        <div class="filters-sheet cols-sheet" @mousedown.stop role="dialog" aria-label="Настройка колонок">
-          <div class="fs-head">
-            <span class="fs-title"><Icon name="columns" :size="17" />Колонки<span class="fs-badge">{{ state.order.length - state.hidden.length }}/{{ state.order.length }}</span></span>
-            <button class="fs-close" title="Закрыть" @click="open = false"><Icon name="close" :size="18" /></button>
+        <div class="filters-sheet k-columns-sheet" @mousedown.stop role="dialog" aria-label="Настройка колонок">
+          <div class="k-filters-sheet-head">
+            <span class="k-filters-sheet-title"><Icon name="columns" :size="17" />Колонки<span class="k-filters-sheet-badge">{{ state.order.length - state.hidden.length }}/{{ state.order.length }}</span></span>
+            <button class="k-filters-sheet-close" title="Закрыть" @click="open = false"><Icon name="close" :size="18" /></button>
           </div>
-          <div class="fs-body"><ColumnsPanel :columns="columns" :state="state" :api="api" /></div>
-          <div class="fs-foot">
-            <button class="btn btn-ghost" @click="api.reset"><Icon name="refresh" :size="14" />Сбросить</button>
-            <button class="btn btn-primary" @click="open = false">Готово</button>
+          <div class="k-filters-sheet-body"><ColumnsPanel :columns="columns" :state="state" :api="api" /></div>
+          <div class="k-filters-sheet-foot">
+            <button class="k-button k-button-ghost" @click="api.reset"><Icon name="refresh" :size="14" />Сбросить</button>
+            <button class="k-button k-button-primary" @click="open = false">Готово</button>
           </div>
         </div>
       </div>

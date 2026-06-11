@@ -21,14 +21,14 @@ function dl(e: Event){ e.stopPropagation(); if (props.downloadable) emit('downlo
     <Icon :name="meta.icon" :size="12" class="doc-tag-ico" />
     <span class="doc-tag-label">{{ meta.short || meta.label }}</span>
   </button>
-  <div v-else :class="['doc-chip', downloadable ? 'doc-chip-clickable' : '']" :style="vars"
+  <div v-else :class="['k-doc-chip', downloadable ? 'k-doc-chip-clickable' : '']" :style="vars"
     :role="downloadable ? 'button' : undefined" :tabindex="downloadable ? 0 : undefined"
     @click="downloadable && dl($event)" @keydown.enter.prevent="downloadable && dl($event)" @keydown.space.prevent="downloadable && dl($event)">
-    <span class="doc-chip-ico"><Icon :name="meta.icon" :size="15" /></span>
-    <span class="doc-chip-main">
-      <span class="doc-chip-name truncate" :title="meta.label">{{ meta.label }}<span v-if="doc.upload" class="doc-chip-up">загружен</span></span>
-      <span class="doc-chip-sub mono"><span class="truncate">{{ doc.number }}</span><em v-if="doc.date">· {{ doc.date }}</em><em v-if="doc.upload && doc.size">· {{ doc.size }}</em><em v-else-if="!doc.upload" class="doc-chip-ondemand">· формируется по запросу</em></span>
+    <span class="k-doc-chip-ico"><Icon :name="meta.icon" :size="15" /></span>
+    <span class="k-doc-chip-main">
+      <span class="k-doc-chip-name truncate" :title="meta.label">{{ meta.label }}<span v-if="doc.upload" class="k-doc-chip-up">загружен</span></span>
+      <span class="k-doc-chip-sub mono"><span class="truncate">{{ doc.number }}</span><em v-if="doc.date">· {{ doc.date }}</em><em v-if="doc.upload && doc.size">· {{ doc.size }}</em><em v-else-if="!doc.upload" class="k-doc-chip-ondemand">· формируется по запросу</em></span>
     </span>
-    <button type="button" class="doc-chip-dl" title="Открыть документ" aria-label="Открыть документ" @click="dl"><Icon name="download" :size="15" /></button>
+    <button type="button" class="k-doc-chip-dl" title="Открыть документ" aria-label="Открыть документ" @click="dl"><Icon name="download" :size="15" /></button>
   </div>
 </template>

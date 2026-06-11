@@ -15,16 +15,16 @@ const dim = (v: any) => (typeof v === 'number' ? v + 'px' : v)
 
 <template>
   <teleport to="body">
-    <div :class="['kui-drawer-root', open ? 'is-open' : '']" :aria-hidden="!open">
-      <div class="kui-drawer-mask" @click="close"></div>
-      <div :class="['kui-drawer-panel', 'kui-drawer-' + side]" role="dialog"
+    <div :class="['k-drawer-root', open ? 'is-open' : '']" :aria-hidden="!open">
+      <div class="k-drawer-mask" @click="close"></div>
+      <div :class="['k-drawer-panel', 'k-drawer-' + side]" role="dialog"
         :style="(side === 'left' || side === 'right') ? { width: dim(size) } : { height: dim(size) }">
-        <div v-if="title || closable" class="kui-drawer-head">
-          <span class="kui-drawer-title">{{ title }}</span>
-          <button v-if="closable" type="button" class="kui-drawer-close" aria-label="Закрыть" @click="close"><Icon name="close" :size="16" /></button>
+        <div v-if="title || closable" class="k-drawer-head">
+          <span class="k-drawer-title">{{ title }}</span>
+          <button v-if="closable" type="button" class="k-drawer-close" aria-label="Закрыть" @click="close"><Icon name="close" :size="16" /></button>
         </div>
-        <div class="kui-drawer-body"><slot /></div>
-        <div v-if="$slots.footer" class="kui-drawer-foot"><slot name="footer" /></div>
+        <div class="k-drawer-body"><slot /></div>
+        <div v-if="$slots.footer" class="k-drawer-foot"><slot name="footer" /></div>
       </div>
     </div>
   </teleport>

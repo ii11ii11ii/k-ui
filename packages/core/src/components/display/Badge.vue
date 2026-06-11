@@ -7,8 +7,8 @@ const text = computed(() => props.count > props.max ? props.max + '+' : String(p
 </script>
 
 <template>
-  <span :class="['kui-badge-wrap', standalone ? 'is-standalone' : '']">
+  <span :class="['k-badge-wrap', standalone ? 'is-standalone' : '']">
     <slot />
-    <sup v-if="show" :class="['kui-badge', dot ? 'is-dot' : '']" :style="{ background: 'var(--st-' + tone + '-dot)' }">{{ dot ? '' : text }}</sup>
+    <sup v-if="show" :class="['k-badge', dot ? 'is-dot' : '']" :style="{ background: 'var(--st-' + tone + '-dot)' }">{{ dot ? '' : text }}</sup>
   </span>
 </template>

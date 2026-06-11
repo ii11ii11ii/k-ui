@@ -15,15 +15,15 @@ function clear(e: Event){ e.stopPropagation(); emit('update:modelValue', ''); em
 </script>
 
 <template>
-  <div class="kui-datepicker">
-    <button type="button" :class="['kui-dp-field', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']" :disabled="disabled" @click="open = !open">
-      <Icon name="calendar" :size="15" class="kui-dp-ico" />
-      <span :class="['kui-dp-text', !modelValue ? 'is-ph' : '']">{{ display || placeholder }}</span>
-      <span v-if="clearable && modelValue" class="kui-dp-clear" @click="clear"><Icon name="close" :size="13" /></span>
+  <div class="k-datepicker">
+    <button type="button" :class="['k-dp-field', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']" :disabled="disabled" @click="open = !open">
+      <Icon name="calendar" :size="15" class="k-dp-ico" />
+      <span :class="['k-dp-text', !modelValue ? 'is-ph' : '']">{{ display || placeholder }}</span>
+      <span v-if="clearable && modelValue" class="k-dp-clear" @click="clear"><Icon name="close" :size="13" /></span>
     </button>
     <template v-if="open">
-      <div class="kui-pop-backdrop" @click="open = false"></div>
-      <div class="kui-dp-pop"><Calendar :value="calVal" @pick="onPick" /></div>
+      <div class="k-pop-backdrop" @click="open = false"></div>
+      <div class="k-dp-pop"><Calendar :value="calVal" @pick="onPick" /></div>
     </template>
   </div>
 </template>

@@ -24,12 +24,12 @@ function onDrop(toIdx) {
 </script>
 
 <template>
-  <div class="cols-panel" @click.stop>
-    <div class="cols-head">
-      <span class="cols-title">Колонки</span>
-      <span class="cols-sub">{{ visibleCount }} из {{ ordered.length }}</span>
+  <div class="k-columns-panel" @click.stop>
+    <div class="k-columns-head">
+      <span class="k-columns-title">Колонки</span>
+      <span class="k-columns-sub">{{ visibleCount }} из {{ ordered.length }}</span>
     </div>
-    <div class="cols-list">
+    <div class="k-columns-list">
       <div v-for="(c, idx) in ordered" :key="c.key"
         :class="['col-row', hidden.has(c.key) ? 'is-off' : '', drag === idx ? 'is-drag' : '', over === idx ? 'is-over' : '', state.fixed[c.key] ? 'is-fixed' : '']"
         draggable="true"
@@ -42,18 +42,18 @@ function onDrop(toIdx) {
           @click="api.toggle(c.key)" :title="c.lockVisible ? 'Колонку нельзя скрыть' : (hidden.has(c.key) ? 'Показать' : 'Скрыть')">
           <span class="chk-box"><Icon v-if="!hidden.has(c.key)" name="check" :size="12" :stroke="3" /></span>
         </button>
-        <span class="col-name">{{ c.label }}</span>
-        <span class="col-fix">
-          <button type="button" :class="['fix-btn', state.fixed[c.key] === 'left' ? 'is-on' : '']" :disabled="c.lockFixed"
+        <span class="k-columns-name">{{ c.label }}</span>
+        <span class="k-columns-fix">
+          <button type="button" :class="['k-columns-fix-btn', state.fixed[c.key] === 'left' ? 'is-on' : '']" :disabled="c.lockFixed"
             @click="api.setFixed(c.key, state.fixed[c.key] === 'left' ? null : 'left')" title="Закрепить слева"><Icon name="pinLeft" :size="15" /></button>
-          <button type="button" :class="['fix-btn', state.fixed[c.key] === 'right' ? 'is-on' : '']" :disabled="c.lockFixed"
+          <button type="button" :class="['k-columns-fix-btn', state.fixed[c.key] === 'right' ? 'is-on' : '']" :disabled="c.lockFixed"
             @click="api.setFixed(c.key, state.fixed[c.key] === 'right' ? null : 'right')" title="Закрепить справа"><Icon name="pinRight" :size="15" /></button>
         </span>
       </div>
     </div>
-    <div class="cols-foot">
-      <button class="btn btn-ghost btn-sm" @click="api.reset"><Icon name="refresh" :size="14" />Сбросить</button>
-      <button class="btn btn-ghost btn-sm" :disabled="hidden.size === 0" @click="api.showAll">Показать всё</button>
+    <div class="k-columns-foot">
+      <button class="k-button k-button-ghost k-button-sm" @click="api.reset"><Icon name="refresh" :size="14" />Сбросить</button>
+      <button class="k-button k-button-ghost k-button-sm" :disabled="hidden.size === 0" @click="api.showAll">Показать всё</button>
     </div>
   </div>
 </template>

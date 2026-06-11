@@ -40,10 +40,10 @@ if (!window.__kModalEsc) { window.__kModalEsc = true; window.addEventListener('k
 
 <template>
   <teleport to="#modal-layer">
-    <div :class="['modal-root', open ? 'is-open' : '']" :style="{ zIndex: 300 + level * 40 }"
+    <div :class="['k-modal-root', open ? 'is-open' : '']" :style="{ zIndex: 300 + level * 40 }"
       :aria-hidden="!open" role="dialog" aria-modal="true" :aria-label="label">
-      <div class="modal-scrim" @click="emit('close')"></div>
-      <div class="modal-panel" :style="panelStyle">
+      <div class="k-modal-scrim" @click="emit('close')"></div>
+      <div class="k-modal-panel" :style="panelStyle">
         <slot />
       </div>
     </div>

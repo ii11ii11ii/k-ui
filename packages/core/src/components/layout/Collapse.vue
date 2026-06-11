@@ -13,9 +13,9 @@ function toggle(name: any){
   else { const arr = Array.isArray(props.modelValue) ? props.modelValue.slice() : []; const i = arr.indexOf(name); if (i >= 0) arr.splice(i, 1); else arr.push(name); next = arr }
   emit('update:modelValue', next); emit('change', next)
 }
-provide('kuiCollapse', { isOpen, toggle })
+provide('kCollapse', { isOpen, toggle })
 </script>
 
 <template>
-  <div class="kui-collapse"><slot /></div>
+  <div class="k-collapse"><slot /></div>
 </template>

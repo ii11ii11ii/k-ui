@@ -4,5 +4,5 @@ defineProps({ mp: { type: String, required: true }, title: { type: String, defau
 </script>
 
 <template>
-  <span class="mp-tag" :title="title || undefined">{{ mp }}</span>
+  <span class="k-mp-tag" :title="title || undefined">{{ mp }}</span>
 </template>

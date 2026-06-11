@@ -18,10 +18,10 @@ function onDrop(e){ over.value = false; if (props.disabled) return; emitFiles(e.
 </script>
 
 <template>
-  <div :class="['kui-upload', over ? 'is-over' : '', disabled ? 'is-disabled' : '']"
+  <div :class="['k-upload', over ? 'is-over' : '', disabled ? 'is-disabled' : '']"
     @click="pick" @dragover.prevent="over = true" @dragleave="over = false" @drop.prevent="onDrop">
-    <Icon name="upload" :size="22" class="kui-upload-ico" />
-    <div class="kui-upload-hint"><slot>{{ hint }}</slot></div>
-    <input ref="input" type="file" class="kui-upload-input" :accept="accept" :multiple="multiple" :disabled="disabled" @change="onChange" />
+    <Icon name="upload" :size="22" class="k-upload-ico" />
+    <div class="k-upload-hint"><slot>{{ hint }}</slot></div>
+    <input ref="input" type="file" class="k-upload-input" :accept="accept" :multiple="multiple" :disabled="disabled" @change="onChange" />
   </div>
 </template>

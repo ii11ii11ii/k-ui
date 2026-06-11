@@ -4,8 +4,8 @@ defineProps({ vertical: { type: Boolean, default: false }, text: { type: String,
 </script>
 
 <template>
-  <div v-if="vertical" class="kui-divider-v" role="separator"></div>
-  <div v-else :class="['kui-divider', (text || $slots.default) ? 'has-text' : '', 'kui-divider-' + align]" role="separator">
-    <span v-if="text || $slots.default" class="kui-divider-text"><slot>{{ text }}</slot></span>
+  <div v-if="vertical" class="k-divider-v" role="separator"></div>
+  <div v-else :class="['k-divider', (text || $slots.default) ? 'has-text' : '', 'k-divider-' + align]" role="separator">
+    <span v-if="text || $slots.default" class="k-divider-text"><slot>{{ text }}</slot></span>
   </div>
 </template>

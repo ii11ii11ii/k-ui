@@ -4,5 +4,5 @@ const props = defineProps({ offset: { type: Number, default: 0 }, bottom: { type
 </script>
 
 <template>
-  <div class="kui-affix" :style="bottom ? { position: 'sticky', bottom: offset + 'px' } : { position: 'sticky', top: offset + 'px' }"><slot /></div>
+  <div class="k-affix" :style="bottom ? { position: 'sticky', bottom: offset + 'px' } : { position: 'sticky', top: offset + 'px' }"><slot /></div>
 </template>

@@ -12,8 +12,8 @@ const emit = defineEmits(['sort'])
 </script>
 
 <template>
-  <button :class="['th-sort', align === 'right' ? 'th-right' : '', sort && sort.key === colKey ? 'is-on' : '']" @click="emit('sort', colKey)">
+  <button :class="['k-sort-head', align === 'right' ? 'th-right' : '', sort && sort.key === colKey ? 'is-on' : '']" @click="emit('sort', colKey)">
     <span>{{ label }}</span>
-    <Icon name="arrowUpDown" :size="13" :class="['th-sort-i', sort && sort.key === colKey ? 'dir-' + sort.dir : '']" />
+    <Icon name="arrowUpDown" :size="13" :class="['k-sort-head-i', sort && sort.key === colKey ? 'dir-' + sort.dir : '']" />
   </button>
 </template>

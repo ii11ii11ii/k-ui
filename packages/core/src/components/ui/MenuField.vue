@@ -4,8 +4,8 @@ defineProps({ label: { type: String, default: '' } })
 </script>
 
 <template>
-  <div class="menu-field" @click.stop>
-    <span v-if="label" class="menu-field-label">{{ label }}</span>
+  <div class="k-menu-field" @click.stop>
+    <span v-if="label" class="k-menu-field-label">{{ label }}</span>
     <slot />
   </div>
 </template>

@@ -17,13 +17,13 @@ function cancel(){ open.value = false; emit('cancel') }
 </script>
 
 <template>
-  <span class="kui-pop-wrap">
-    <span class="kui-pop-trigger" @click="open = !open"><slot /></span>
+  <span class="k-pop-wrap">
+    <span class="k-pop-trigger" @click="open = !open"><slot /></span>
     <template v-if="open">
-      <div class="kui-pop-backdrop" @click="cancel"></div>
-      <div class="kui-pop-panel kui-popconfirm">
-        <div class="kui-popconfirm-head"><Icon :name="icon" :size="16" :class="danger ? 'kui-popconfirm-ico-danger' : 'kui-popconfirm-ico'" /><span>{{ title }}</span></div>
-        <div class="kui-popconfirm-acts">
+      <div class="k-pop-backdrop" @click="cancel"></div>
+      <div class="k-pop-panel k-popconfirm">
+        <div class="k-popconfirm-head"><Icon :name="icon" :size="16" :class="danger ? 'k-popconfirm-ico-danger' : 'k-popconfirm-ico'" /><span>{{ title }}</span></div>
+        <div class="k-popconfirm-acts">
           <Button variant="ghost" size="sm" @click="cancel">{{ cancelLabel }}</Button>
           <Button :variant="danger ? 'danger' : 'primary'" size="sm" @click="confirm">{{ confirmLabel }}</Button>
         </div>

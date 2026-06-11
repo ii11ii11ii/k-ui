@@ -9,8 +9,8 @@ function set(n: number){ if (props.readonly) return; const v = (props.allowClear
 </script>
 
 <template>
-  <div :class="['kui-rate', readonly ? 'is-readonly' : '']" @mouseleave="hover = 0">
-    <button v-for="i in max" :key="i" type="button" class="kui-rate-star" :class="(hover || modelValue) >= i ? 'is-on' : ''"
+  <div :class="['k-rate', readonly ? 'is-readonly' : '']" @mouseleave="hover = 0">
+    <button v-for="i in max" :key="i" type="button" class="k-rate-star" :class="(hover || modelValue) >= i ? 'is-on' : ''"
       @mouseenter="hover = i" @click="set(i)"><Icon :name="(hover || modelValue) >= i ? 'starFill' : 'star'" :size="size" /></button>
   </div>
 </template>

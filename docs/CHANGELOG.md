@@ -5,6 +5,37 @@
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-06-11
+
+**BREAKING** — единый нейминг с префиксом «k» (как Element Plus / Vuetify). Строки `kui` удалены.
+
+### Changed (миграция потребителей обязательна)
+- **Имена компонентов → префикс `K`:** `Icon → KIcon`, `DataTable → KDataTable`, `Modal → KModal`,
+  `Button → KButton`, … (все 117). Теги при глобальной регистрации — kebab: `<k-icon>`, `<k-data-table>`.
+  Слитные аббревиатуры — явные алиасы: `<k-qrcode>` (KQRCode), `<k-hbars>` (KHBars).
+- **CSS-классы:** префикс `kui-*` → `k-*`; корневой класс компонента = его тегу.
+- **Нормализация ядра «корень = имя компонента»:** `.btn → .k-button`, `.fld → .k-input-field`,
+  `.dt/.data-table → .k-table`, `.menu → .k-menu`, `.modal → .k-modal`, `.combo → .k-combo-box`,
+  `.seg/.segmented → .k-segmented`, `.switch → .k-switch`, `.stepper → .k-stepper`, `.pager → .k-pager`,
+  `.meter → .k-meter`, `.editable/.ie- → .k-inline-edit`, `.icon-btn → .k-icon-btn`,
+  `.status-badge → .k-status-badge` (+ модификатор `.k-tone-pill` у TonePill), чипы → `.k-code-chip`/
+  `.k-doc-chip`/`.k-role-chip`/`.k-mp-tag`, `.cal- → .k-calendar-`, `.avatar → .k-avatar`,
+  `.money- → .k-money-`, `.phone-* → .k-phone-input-*`, `.pw-* → .k-password-field-*`. Состояния — общий словарь `.is-*` (без изменений).
+- **Инструменты таблицы/фильтров:** FilterControl/FilterHead/ComboBox-опции/Presence/Choice → единый `.k-filter-*`
+  (`.flt-*`(control)→`.k-filter-*`, `.th-flt-*→.k-filter-th-*`, `.presence-flt→.k-filter-presence`, `.pf-*→.k-filter-presence-*`,
+  `.choice-flt→.k-filter-choice`); FiltersSheet `.fs-*→.k-filters-sheet-*`; ColumnsMenu/Panel `.cols-*`/`.col-name`/`.col-fix`/`.fix-btn`→`.k-columns-*`;
+  ConfirmHost `.confirm-*→.k-confirm-*`; Tabs `.order-tabs/.order-tab/.tab-count→.k-tabs(-item/-count)`;
+  MiniPager `.mini-pager-*→.k-mini-pager-*`; SortHead `.th-sort→.k-sort-head`. Прикладная панель активных фильтров
+  (`.flt-bar*`/`.flt-chip*`) и табличный словарь ячеек (`.col-*`/`.cell-*`/`.row-*`) — НЕ тронуты. Histoire-сторис → `K*`.
+- **inject-ключ** `kuiCollapse → kCollapse`; **директива** `v-tooltip` использует `.k-tip` / `data-k-tip`;
+  `RadioGroup name` `kui-radio → k-radio`.
+
+### Migration
+- Глобально: `app.use(KometumUI)` — без изменений, но в шаблонах теги `<icon>` → `<k-icon>` и т.п.
+- Точечно: переименуйте импорты `{ Icon }` → `{ KIcon }`. Кастомные стили, цепляющиеся за `.btn`/`.fld`/
+  `.kui-*`, переведите на `.k-button`/`.k-input-field`/`.k-*`.
+
+
 ## [0.3.0] — 2026-06-10
 
 Доведение до **максимально полной библиотеки (117 компонентов)** — добавлены

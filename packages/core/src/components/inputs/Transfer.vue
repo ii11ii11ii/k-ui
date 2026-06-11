@@ -13,23 +13,23 @@ function moveLeft(){ const next = (props.modelValue as any[]).filter((k) => !sel
 </script>
 
 <template>
-  <div class="kui-transfer">
-    <div class="kui-transfer-panel">
-      <div class="kui-transfer-head">{{ titles[0] }} <span class="kui-transfer-count">{{ left.length }}</span></div>
-      <div class="kui-transfer-list">
-        <label v-for="o in left" :key="o.key" :class="['kui-transfer-item', selLeft.includes(o.key) ? 'is-sel' : '']">
+  <div class="k-transfer">
+    <div class="k-transfer-panel">
+      <div class="k-transfer-head">{{ titles[0] }} <span class="k-transfer-count">{{ left.length }}</span></div>
+      <div class="k-transfer-list">
+        <label v-for="o in left" :key="o.key" :class="['k-transfer-item', selLeft.includes(o.key) ? 'is-sel' : '']">
           <input type="checkbox" :checked="selLeft.includes(o.key)" :disabled="o.disabled" @change="toggle(selLeft, o.key)" />{{ o.label }}
         </label>
       </div>
     </div>
-    <div class="kui-transfer-ctrl">
-      <button type="button" class="btn btn-ghost btn-sm" :disabled="!selLeft.length" @click="moveRight"><Icon name="chevronRight" :size="15" /></button>
-      <button type="button" class="btn btn-ghost btn-sm" :disabled="!selRight.length" @click="moveLeft"><Icon name="chevronLeft" :size="15" /></button>
+    <div class="k-transfer-ctrl">
+      <button type="button" class="k-button k-button-ghost k-button-sm" :disabled="!selLeft.length" @click="moveRight"><Icon name="chevronRight" :size="15" /></button>
+      <button type="button" class="k-button k-button-ghost k-button-sm" :disabled="!selRight.length" @click="moveLeft"><Icon name="chevronLeft" :size="15" /></button>
     </div>
-    <div class="kui-transfer-panel">
-      <div class="kui-transfer-head">{{ titles[1] }} <span class="kui-transfer-count">{{ right.length }}</span></div>
-      <div class="kui-transfer-list">
-        <label v-for="o in right" :key="o.key" :class="['kui-transfer-item', selRight.includes(o.key) ? 'is-sel' : '']">
+    <div class="k-transfer-panel">
+      <div class="k-transfer-head">{{ titles[1] }} <span class="k-transfer-count">{{ right.length }}</span></div>
+      <div class="k-transfer-list">
+        <label v-for="o in right" :key="o.key" :class="['k-transfer-item', selRight.includes(o.key) ? 'is-sel' : '']">
           <input type="checkbox" :checked="selRight.includes(o.key)" @change="toggle(selRight, o.key)" />{{ o.label }}
         </label>
       </div>

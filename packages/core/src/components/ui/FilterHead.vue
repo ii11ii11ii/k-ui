@@ -53,22 +53,22 @@ onBeforeUnmount(() => { if (cleanup) cleanup() })
 </script>
 
 <template>
-  <div :class="['th-flt', active ? 'is-on' : '', align === 'right' ? 'th-right' : '']" ref="ref0">
-    <button class="th-flt-btn" @click="open ? doClose() : doOpen()" :title="col.thTitle || `Фильтр: ${col.label}`">
-      <span class="th-flt-label">{{ col.label }}</span>
-      <span :class="['th-flt-ico', open ? 'is-open' : '']"><Icon :name="active ? 'funnel' : trigIcon" :size="13" /></span>
+  <div :class="['k-filter-th', active ? 'is-on' : '', align === 'right' ? 'th-right' : '']" ref="ref0">
+    <button class="k-filter-th-btn" @click="open ? doClose() : doOpen()" :title="col.thTitle || `Фильтр: ${col.label}`">
+      <span class="k-filter-th-label">{{ col.label }}</span>
+      <span :class="['k-filter-th-ico', open ? 'is-open' : '']"><Icon :name="active ? 'funnel' : trigIcon" :size="13" /></span>
     </button>
-    <div v-if="active" class="th-flt-active" :title="label">
-      <span class="th-flt-val">{{ label }}</span>
-      <button class="th-flt-x" title="Сбросить фильтр" @click="clear"><Icon name="close" :size="15" :stroke="2.6" /></button>
+    <div v-if="active" class="k-filter-th-active" :title="label">
+      <span class="k-filter-th-val">{{ label }}</span>
+      <button class="k-filter-th-x" title="Сбросить фильтр" @click="clear"><Icon name="close" :size="15" :stroke="2.6" /></button>
     </div>
     <teleport to="body">
       <template v-if="open">
         <div class="pop-backdrop pop-backdrop-hi" @mousedown="doClose"></div>
-        <div class="flt-pop" :style="{ position: 'fixed', top: (pos ? pos.top : -9999) + 'px', left: (pos ? pos.left : -9999) + 'px', width: popWidth + 'px' }" @mousedown.stop @click.stop>
-          <div class="flt-pop-head">
-            <span class="flt-pop-title">{{ col.label }}</span>
-            <button v-if="active" class="flt-pop-clear" @click="clear">Сбросить</button>
+        <div class="k-filter-pop" :style="{ position: 'fixed', top: (pos ? pos.top : -9999) + 'px', left: (pos ? pos.left : -9999) + 'px', width: popWidth + 'px' }" @mousedown.stop @click.stop>
+          <div class="k-filter-pop-head">
+            <span class="k-filter-pop-title">{{ col.label }}</span>
+            <button v-if="active" class="k-filter-pop-clear" @click="clear">Сбросить</button>
           </div>
           <FilterControl :col="col" :value="value" :options="options || []"
             @change="emit('change', col.key, $event)" @clear="clear" @picked="doClose" />

@@ -13,8 +13,8 @@ const t = computed(() => STATUS_TONES[props.tone] || STATUS_TONES.gray)
 </script>
 
 <template>
-  <span :class="`status-badge st-${size}`" :style="{ background: t.bg, color: t.fg }">
-    <span v-if="dot" class="status-dot" :style="{ background: t.dot }"></span>
+  <span :class="`k-status-badge k-tone-pill k-status-badge-${size}`" :style="{ background: t.bg, color: t.fg }">
+    <span v-if="dot" class="k-status-badge-dot" :style="{ background: t.dot }"></span>
     {{ label }}
   </span>
 </template>

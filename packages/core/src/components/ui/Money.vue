@@ -12,8 +12,8 @@ const props = defineProps({
 const text = computed(() => fmtMoney(props.value, { decimals: props.decimals, sign: props.sign }))
 const cls = computed(() => [
   'mono',
-  !props.value && props.muted ? 'money-zero' : '',
-  props.value < 0 ? 'money-neg' : (props.sign && props.value > 0 ? 'money-pos' : ''),
+  !props.value && props.muted ? 'k-money-zero' : '',
+  props.value < 0 ? 'k-money-neg' : (props.sign && props.value > 0 ? 'k-money-pos' : ''),
 ].filter(Boolean).join(' '))
 </script>
 

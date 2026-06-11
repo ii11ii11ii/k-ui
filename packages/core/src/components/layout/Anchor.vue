@@ -14,7 +14,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 </script>
 
 <template>
-  <nav class="kui-anchor">
-    <a v-for="it in items" :key="it.href" :href="it.href" :class="['kui-anchor-link', active === it.href.replace('#', '') ? 'is-active' : '']" @click="go(it.href, $event)">{{ it.title }}</a>
+  <nav class="k-anchor">
+    <a v-for="it in items" :key="it.href" :href="it.href" :class="['k-anchor-link', active === it.href.replace('#', '') ? 'is-active' : '']" @click="go(it.href, $event)">{{ it.title }}</a>
   </nav>
 </template>

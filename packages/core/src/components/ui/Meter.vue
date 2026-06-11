@@ -23,11 +23,11 @@ const shown = computed(() => (props.valText != null ? props.valText : `${Math.ro
 </script>
 
 <template>
-  <div :class="`meter meter-${lvl}`" :style="minW ? { minWidth: typeof minW === 'number' ? minW + 'px' : minW } : null">
-    <div class="meter-top">
-      <span class="meter-label"><Icon v-if="icon" :name="icon" :size="13" />{{ label }}</span>
-      <span v-if="showVal" class="meter-val">{{ shown }}</span>
+  <div :class="`k-meter k-meter-${lvl}`" :style="minW ? { minWidth: typeof minW === 'number' ? minW + 'px' : minW } : null">
+    <div class="k-meter-top">
+      <span class="k-meter-label"><Icon v-if="icon" :name="icon" :size="13" />{{ label }}</span>
+      <span v-if="showVal" class="k-meter-val">{{ shown }}</span>
     </div>
-    <div class="meter-track"><div class="meter-fill" :style="{ width: pct + '%' }"></div></div>
+    <div class="k-meter-track"><div class="k-meter-fill" :style="{ width: pct + '%' }"></div></div>
   </div>
 </template>

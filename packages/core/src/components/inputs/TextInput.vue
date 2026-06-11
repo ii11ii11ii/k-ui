@@ -17,10 +17,10 @@ function onInput(e){ emit('update:modelValue', e.target.value); emit('input', e.
 </script>
 
 <template>
-  <div :class="['kui-input', icon ? 'has-icon' : '', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '', size === 'sm' ? 'is-sm' : '']">
-    <Icon v-if="icon" :name="icon" :size="16" class="kui-input-ico" />
-    <input :class="['fld', mono ? 'mono' : '']" :type="type" :value="modelValue" :placeholder="placeholder" :disabled="disabled"
+  <div :class="['k-input', icon ? 'has-icon' : '', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '', size === 'sm' ? 'is-sm' : '']">
+    <Icon v-if="icon" :name="icon" :size="16" class="k-input-ico" />
+    <input :class="['k-input-field', mono ? 'mono' : '']" :type="type" :value="modelValue" :placeholder="placeholder" :disabled="disabled"
       @input="onInput" @change="$emit('change', $event.target.value)" @keydown.enter="$emit('enter', $event.target.value)" />
-    <button v-if="clearable && modelValue" type="button" class="kui-input-clear" @click="$emit('update:modelValue','')"><Icon name="close" :size="14" /></button>
+    <button v-if="clearable && modelValue" type="button" class="k-input-clear" @click="$emit('update:modelValue','')"><Icon name="close" :size="14" /></button>
   </div>
 </template>

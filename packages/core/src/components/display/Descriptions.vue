@@ -4,13 +4,13 @@ defineProps({ title: { type: String, default: '' }, columns: { type: Number, def
 </script>
 
 <template>
-  <div :class="['kui-desc', bordered ? 'is-bordered' : '']">
-    <div v-if="title" class="kui-desc-title">{{ title }}</div>
-    <div class="kui-desc-grid" :style="{ gridTemplateColumns: 'repeat(' + columns + ', minmax(0,1fr))' }">
+  <div :class="['k-desc', bordered ? 'is-bordered' : '']">
+    <div v-if="title" class="k-desc-title">{{ title }}</div>
+    <div class="k-desc-grid" :style="{ gridTemplateColumns: 'repeat(' + columns + ', minmax(0,1fr))' }">
       <slot>
-        <div v-for="(it, i) in items" :key="i" class="kui-desc-cell" :style="{ gridColumn: it.span ? 'span ' + it.span : null }">
-          <div class="kui-desc-label">{{ it.label }}</div>
-          <div class="kui-desc-value">{{ it.value }}</div>
+        <div v-for="(it, i) in items" :key="i" class="k-desc-cell" :style="{ gridColumn: it.span ? 'span ' + it.span : null }">
+          <div class="k-desc-label">{{ it.label }}</div>
+          <div class="k-desc-value">{{ it.value }}</div>
         </div>
       </slot>
     </div>

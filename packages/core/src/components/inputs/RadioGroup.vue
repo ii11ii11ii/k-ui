@@ -11,11 +11,11 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:modelValue','change'])
 function pick(v){ emit('update:modelValue', v); emit('change', v) }
-provide(RadioGroupKey, { get value(){ return props.modelValue }, pick, get disabled(){ return props.disabled }, name: 'kui-radio' })
+provide(RadioGroupKey, { get value(){ return props.modelValue }, pick, get disabled(){ return props.disabled }, name: 'k-radio' })
 </script>
 
 <template>
-  <div :class="['kui-radio-group', inline ? 'is-inline' : '']" role="radiogroup">
+  <div :class="['k-radio-group', inline ? 'is-inline' : '']" role="radiogroup">
     <slot><Radio v-for="o in options" :key="o.value" :value="o.value" :label="o.label" :disabled="o.disabled" /></slot>
   </div>
 </template>

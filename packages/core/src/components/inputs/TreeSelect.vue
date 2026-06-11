@@ -15,14 +15,14 @@ function onSelect(n: any){ if (n.children && n.children.length) return; emit('up
 </script>
 
 <template>
-  <div class="kui-treeselect">
-    <button type="button" :class="['kui-dp-field', disabled ? 'is-disabled' : '']" :disabled="disabled" @click="open = !open">
-      <span :class="['kui-dp-text', !label ? 'is-ph' : '']">{{ label || placeholder }}</span>
-      <Icon name="chevronDown" :size="15" class="kui-dp-ico" />
+  <div class="k-treeselect">
+    <button type="button" :class="['k-dp-field', disabled ? 'is-disabled' : '']" :disabled="disabled" @click="open = !open">
+      <span :class="['k-dp-text', !label ? 'is-ph' : '']">{{ label || placeholder }}</span>
+      <Icon name="chevronDown" :size="15" class="k-dp-ico" />
     </button>
     <template v-if="open">
-      <div class="kui-pop-backdrop" @click="open = false"></div>
-      <div class="kui-treeselect-pop"><Tree :nodes="nodes" :selected-key="modelValue" @select="onSelect" /></div>
+      <div class="k-pop-backdrop" @click="open = false"></div>
+      <div class="k-treeselect-pop"><Tree :nodes="nodes" :selected-key="modelValue" @select="onSelect" /></div>
     </template>
   </div>
 </template>

@@ -4,11 +4,11 @@ defineProps({ title: { type: String, default: '' }, time: { type: String, defaul
 </script>
 
 <template>
-  <div class="kui-tl-item">
-    <span class="kui-tl-dot" :style="tone ? { background: 'var(--st-' + tone + '-dot)' } : null"></span>
-    <div class="kui-tl-body">
-      <div class="kui-tl-head"><span class="kui-tl-title">{{ title }}</span><span v-if="time" class="kui-tl-time">{{ time }}</span></div>
-      <div class="kui-tl-desc"><slot /></div>
+  <div class="k-tl-item">
+    <span class="k-tl-dot" :style="tone ? { background: 'var(--st-' + tone + '-dot)' } : null"></span>
+    <div class="k-tl-body">
+      <div class="k-tl-head"><span class="k-tl-title">{{ title }}</span><span v-if="time" class="k-tl-time">{{ time }}</span></div>
+      <div class="k-tl-desc"><slot /></div>
     </div>
   </div>
 </template>

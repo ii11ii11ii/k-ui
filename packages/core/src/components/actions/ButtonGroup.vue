@@ -4,5 +4,5 @@ defineProps({ attached: { type: Boolean, default: false } })
 </script>
 
 <template>
-  <div :class="['btn-group', attached ? 'is-attached' : '']"><slot /></div>
+  <div :class="['k-button-group', attached ? 'is-attached' : '']"><slot /></div>
 </template>

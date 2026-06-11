@@ -13,11 +13,11 @@ function onChange(e){ emit('update:modelValue', e.target.value); emit('change', 
 </script>
 
 <template>
-  <div :class="['kui-select', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
-    <select class="fld" :value="modelValue" :disabled="disabled" @change="onChange">
+  <div :class="['k-select', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
+    <select class="k-input-field" :value="modelValue" :disabled="disabled" @change="onChange">
       <option v-if="placeholder" value="" disabled>{{ placeholder }}</option>
       <option v-for="o in options" :key="o.value" :value="o.value">{{ o.label }}</option>
     </select>
-    <Icon name="chevronDown" :size="16" class="kui-select-caret" />
+    <Icon name="chevronDown" :size="16" class="k-select-caret" />
   </div>
 </template>

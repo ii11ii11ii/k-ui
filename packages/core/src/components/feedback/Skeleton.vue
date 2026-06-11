@@ -11,10 +11,10 @@ const dim = (v: any) => (typeof v === 'number' ? v + 'px' : v)
 </script>
 
 <template>
-  <div v-if="variant === 'text'" class="kui-skel-lines">
-    <span v-for="i in lines" :key="i" :class="['kui-skel', animated ? 'is-anim' : '']"
+  <div v-if="variant === 'text'" class="k-skel-lines">
+    <span v-for="i in lines" :key="i" :class="['k-skel', animated ? 'is-anim' : '']"
       :style="{ width: (i === lines && lines > 1) ? '60%' : (dim(width) || '100%'), height: dim(height) || '0.9em' }"></span>
   </div>
-  <span v-else :class="['kui-skel', variant === 'circle' ? 'is-circle' : '', animated ? 'is-anim' : '']"
+  <span v-else :class="['k-skel', variant === 'circle' ? 'is-circle' : '', animated ? 'is-anim' : '']"
     :style="{ width: dim(width) || (variant === 'circle' ? '40px' : '100%'), height: dim(height) || (variant === 'circle' ? '40px' : '80px') }"></span>
 </template>

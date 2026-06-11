@@ -12,6 +12,6 @@ defineEmits(['update:modelValue','change'])
 </script>
 
 <template>
-  <textarea :class="['fld', 'fld-area', invalid ? 'is-invalid' : '']" :rows="rows" :value="modelValue" :placeholder="placeholder"
+  <textarea :class="['k-input-field', 'k-input-field-area', invalid ? 'is-invalid' : '']" :rows="rows" :value="modelValue" :placeholder="placeholder"
     :disabled="disabled" :style="{ resize }" @input="$emit('update:modelValue', $event.target.value)" @change="$emit('change', $event.target.value)"></textarea>
 </template>

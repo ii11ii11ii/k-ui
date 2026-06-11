@@ -4,6 +4,6 @@ defineProps({ href: { type: String, default: '' }, current: { type: Boolean, def
 </script>
 
 <template>
-  <a v-if="href" class="kui-bc-item" :href="href"><slot /></a>
-  <span v-else :class="['kui-bc-item', current ? 'is-current' : '']"><slot /></span>
+  <a v-if="href" class="k-bc-item" :href="href"><slot /></a>
+  <span v-else :class="['k-bc-item', current ? 'is-current' : '']"><slot /></span>
 </template>

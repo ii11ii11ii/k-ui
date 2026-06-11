@@ -14,4 +14,4 @@ export * from './utils'
 export { KometumUI, type KometumUIOptions } from './plugin'
 export { default } from './plugin'
 
-export const version = '0.1.0'
+export const version = '0.4.0'

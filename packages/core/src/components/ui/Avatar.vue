@@ -12,5 +12,5 @@ const hue = computed(() => Array.from(props.name || '').reduce((a, c) => a + c.c
 </script>
 
 <template>
-  <span class="avatar" :style="{ width: size + 'px', height: size + 'px', fontSize: (size * 0.42) + 'px', background: `oklch(0.62 0.12 ${hue})` }">{{ initials }}</span>
+  <span class="k-avatar" :style="{ width: size + 'px', height: size + 'px', fontSize: (size * 0.42) + 'px', background: `oklch(0.62 0.12 ${hue})` }">{{ initials }}</span>
 </template>

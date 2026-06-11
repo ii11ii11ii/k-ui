@@ -45,12 +45,12 @@ onBeforeUnmount(() => { if (cleanup) cleanup() })
 </script>
 
 <template>
-  <span class="menu-wrap" ref="wrapRef">
+  <span class="k-menu-wrap" ref="wrapRef">
     <slot name="trigger" :open="open" :toggle="toggle" />
     <teleport to="body">
       <template v-if="open">
         <div class="pop-backdrop" @mousedown="doClose"></div>
-        <div class="menu-pop menu-pop-fixed" role="menu" @click="doClose"
+        <div class="k-menu-pop k-menu-pop-fixed" role="menu" @click="doClose"
           :style="{ top: (pos ? pos.top : -9999) + 'px', left: (pos ? pos.left : -9999) + 'px', minWidth: width + 'px' }">
           <slot />
         </div>

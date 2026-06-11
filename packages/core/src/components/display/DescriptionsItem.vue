@@ -4,8 +4,8 @@ defineProps({ label: { type: String, default: '' }, span: { type: Number, defaul
 </script>
 
 <template>
-  <div class="kui-desc-cell" :style="{ gridColumn: span > 1 ? 'span ' + span : null }">
-    <div class="kui-desc-label">{{ label }}</div>
-    <div class="kui-desc-value"><slot /></div>
+  <div class="k-desc-cell" :style="{ gridColumn: span > 1 ? 'span ' + span : null }">
+    <div class="k-desc-label">{{ label }}</div>
+    <div class="k-desc-value"><slot /></div>
   </div>
 </template>

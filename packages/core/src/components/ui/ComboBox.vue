@@ -63,33 +63,33 @@ onBeforeUnmount(() => { if (cleanup) cleanup() })
 </script>
 
 <template>
-  <span :class="['combo', `combo-${variant}`, open ? 'is-open' : '', !sel ? 'is-empty' : '', disabled ? 'is-disabled' : '']" ref="triggerRef">
-    <button type="button" class="combo-trigger" :disabled="disabled" @click="toggle" :title="sel ? sel.label : placeholder">
-      <Icon v-if="icon" :name="icon" :size="15" class="combo-ico" />
-      <span class="combo-value truncate"><template v-if="sel">{{ sel.label }}</template><span v-else class="combo-ph">{{ placeholder }}</span></span>
-      <Icon :name="variant === 'inline' && !sel ? 'plus' : 'chevronDown'" :size="variant === 'inline' && !sel ? 12 : 15" class="combo-caret" />
+  <span :class="['k-combo-box', `k-combo-box-${variant}`, open ? 'is-open' : '', !sel ? 'is-empty' : '', disabled ? 'is-disabled' : '']" ref="triggerRef">
+    <button type="button" class="k-combo-box-trigger" :disabled="disabled" @click="toggle" :title="sel ? sel.label : placeholder">
+      <Icon v-if="icon" :name="icon" :size="15" class="k-combo-box-ico" />
+      <span class="k-combo-box-value truncate"><template v-if="sel">{{ sel.label }}</template><span v-else class="k-combo-box-ph">{{ placeholder }}</span></span>
+      <Icon :name="variant === 'inline' && !sel ? 'plus' : 'chevronDown'" :size="variant === 'inline' && !sel ? 12 : 15" class="k-combo-box-caret" />
     </button>
     <teleport to="body">
       <template v-if="open">
-        <div class="combo-backdrop" @mousedown="doClose"></div>
-        <div class="combo-pop" :style="{ position: 'fixed', top: (pos ? pos.top : -9999) + 'px', left: (pos ? pos.left : -9999) + 'px', width: (pos ? pos.width : 240) + 'px' }" @mousedown.stop>
-          <div class="flt-text">
-            <Icon name="search" :size="15" class="flt-text-ico" />
-            <input class="flt-text-input" autofocus v-model="q" :placeholder="searchPlaceholder" />
-            <button v-if="q" class="flt-text-clear" title="Очистить поиск" @click="q = ''"><Icon name="close" :size="13" /></button>
+        <div class="k-combo-box-backdrop" @mousedown="doClose"></div>
+        <div class="k-combo-box-pop" :style="{ position: 'fixed', top: (pos ? pos.top : -9999) + 'px', left: (pos ? pos.left : -9999) + 'px', width: (pos ? pos.width : 240) + 'px' }" @mousedown.stop>
+          <div class="k-filter-text">
+            <Icon name="search" :size="15" class="k-filter-text-ico" />
+            <input class="k-filter-text-input" autofocus v-model="q" :placeholder="searchPlaceholder" />
+            <button v-if="q" class="k-filter-text-clear" title="Очистить поиск" @click="q = ''"><Icon name="close" :size="13" /></button>
           </div>
-          <div class="flt-options" role="listbox">
-            <button v-if="allowClear" :class="['flt-opt', (!value && value !== 0) ? 'is-on' : '']" @click="pick('')">
-              <span class="flt-opt-box is-radio"><span v-if="!value && value !== 0" class="flt-opt-dot"></span></span>
-              <span class="flt-opt-label combo-opt-clear">Не выбрано</span>
+          <div class="k-filter-options" role="listbox">
+            <button v-if="allowClear" :class="['k-filter-opt', (!value && value !== 0) ? 'is-on' : '']" @click="pick('')">
+              <span class="k-filter-opt-box is-radio"><span v-if="!value && value !== 0" class="k-filter-opt-dot"></span></span>
+              <span class="k-filter-opt-label k-combo-box-opt-clear">Не выбрано</span>
             </button>
-            <div v-if="list.length === 0" class="flt-empty">Ничего не найдено</div>
+            <div v-if="list.length === 0" class="k-filter-empty">Ничего не найдено</div>
             <button v-for="o in list" :key="o.value" role="option" :aria-selected="String(o.value) === String(value)"
-              :class="['flt-opt', String(o.value) === String(value) ? 'is-on' : '']" @click="pick(o.value)">
-              <span class="flt-opt-box is-radio"><span v-if="String(o.value) === String(value)" class="flt-opt-dot"></span></span>
-              <span class="combo-opt-text">
-                <span class="flt-opt-label" :title="o.label">{{ o.label }}</span>
-                <span v-if="o.sub" class="combo-opt-sub">{{ o.sub }}</span>
+              :class="['k-filter-opt', String(o.value) === String(value) ? 'is-on' : '']" @click="pick(o.value)">
+              <span class="k-filter-opt-box is-radio"><span v-if="String(o.value) === String(value)" class="k-filter-opt-dot"></span></span>
+              <span class="k-combo-box-opt-text">
+                <span class="k-filter-opt-label" :title="o.label">{{ o.label }}</span>
+                <span v-if="o.sub" class="k-combo-box-opt-sub">{{ o.sub }}</span>
               </span>
             </button>
           </div>

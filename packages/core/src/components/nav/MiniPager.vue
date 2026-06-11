@@ -17,12 +17,12 @@ function go(p: number){ emit('update:page', p); emit('page', p) }
 </script>
 
 <template>
-  <div v-if="pages > 1" class="mini-pager">
-    <span class="mini-pager-range nowrap">{{ from }}–{{ to }} из {{ total }}{{ unit ? ' ' + unit : '' }}</span>
-    <div class="mini-pager-nav">
-      <button type="button" class="mini-pager-btn" :disabled="cur <= 1" title="Назад" @click="go(cur - 1)"><Icon name="chevronLeft" :size="15" /></button>
-      <span class="mini-pager-pos mono nowrap">{{ cur }} / {{ pages }}</span>
-      <button type="button" class="mini-pager-btn" :disabled="cur >= pages" title="Вперёд" @click="go(cur + 1)"><Icon name="chevronRight" :size="15" /></button>
+  <div v-if="pages > 1" class="k-mini-pager">
+    <span class="k-mini-pager-range nowrap">{{ from }}–{{ to }} из {{ total }}{{ unit ? ' ' + unit : '' }}</span>
+    <div class="k-mini-pager-nav">
+      <button type="button" class="k-mini-pager-btn" :disabled="cur <= 1" title="Назад" @click="go(cur - 1)"><Icon name="chevronLeft" :size="15" /></button>
+      <span class="k-mini-pager-pos mono nowrap">{{ cur }} / {{ pages }}</span>
+      <button type="button" class="k-mini-pager-btn" :disabled="cur >= pages" title="Вперёд" @click="go(cur + 1)"><Icon name="chevronRight" :size="15" /></button>
     </div>
   </div>
 </template>

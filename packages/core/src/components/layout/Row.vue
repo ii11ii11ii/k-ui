@@ -13,5 +13,5 @@ const jmap: Record<string,string> = { start: 'flex-start', end: 'flex-end', cent
 </script>
 
 <template>
-  <div class="kui-row" :style="{ columnGap: gx + 'px', rowGap: gy + 'px', alignItems: align, justifyContent: jmap[justify] || 'flex-start', flexWrap: wrap ? 'wrap' : 'nowrap' }"><slot /></div>
+  <div class="k-row" :style="{ columnGap: gx + 'px', rowGap: gy + 'px', alignItems: align, justifyContent: jmap[justify] || 'flex-start', flexWrap: wrap ? 'wrap' : 'nowrap' }"><slot /></div>
 </template>

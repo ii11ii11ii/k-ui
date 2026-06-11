@@ -4,5 +4,5 @@ defineProps({ bordered: { type: Boolean, default: true }, hoverable: { type: Boo
 </script>
 
 <template>
-  <div :class="['kui-list', bordered ? '' : 'is-borderless', hoverable ? 'is-hoverable' : '', 'kui-list-' + size]"><slot /></div>
+  <div :class="['k-list', bordered ? '' : 'is-borderless', hoverable ? 'is-hoverable' : '', 'k-list-' + size]"><slot /></div>
 </template>

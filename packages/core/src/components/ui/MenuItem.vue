@@ -20,16 +20,16 @@ function onClick(e) {
 </script>
 
 <template>
-  <a v-if="href !== undefined" :class="['menu-item', danger ? 'is-danger' : '', disabled ? 'is-disabled' : '']"
+  <a v-if="href !== undefined" :class="['k-menu-item', danger ? 'is-danger' : '', disabled ? 'is-disabled' : '']"
     :href="href" role="menuitem" :title="title" @click="onClick">
-    <span v-if="icon" class="menu-ico"><Icon :name="icon" :size="17" /></span>
-    <span class="menu-item-label">{{ label }}</span>
-    <span v-if="hint" class="menu-item-hint">{{ hint }}</span>
+    <span v-if="icon" class="k-menu-ico"><Icon :name="icon" :size="17" /></span>
+    <span class="k-menu-item-label">{{ label }}</span>
+    <span v-if="hint" class="k-menu-item-hint">{{ hint }}</span>
   </a>
-  <button v-else :class="['menu-item', danger ? 'is-danger' : '', disabled ? 'is-disabled' : '']"
+  <button v-else :class="['k-menu-item', danger ? 'is-danger' : '', disabled ? 'is-disabled' : '']"
     role="menuitem" :disabled="disabled" :title="title" @click="onClick">
-    <span v-if="icon" class="menu-ico"><Icon :name="icon" :size="17" /></span>
-    <span class="menu-item-label">{{ label }}</span>
-    <span v-if="hint" class="menu-item-hint">{{ hint }}</span>
+    <span v-if="icon" class="k-menu-ico"><Icon :name="icon" :size="17" /></span>
+    <span class="k-menu-item-label">{{ label }}</span>
+    <span v-if="hint" class="k-menu-item-hint">{{ hint }}</span>
   </button>
 </template>

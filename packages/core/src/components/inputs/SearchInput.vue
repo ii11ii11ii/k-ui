@@ -10,10 +10,10 @@ defineEmits(['update:modelValue','search'])
 </script>
 
 <template>
-  <div :class="['kui-search', disabled ? 'is-disabled' : '']">
-    <Icon name="search" :size="16" class="kui-search-ico" />
-    <input class="kui-search-input" :value="modelValue" :placeholder="placeholder" :disabled="disabled"
+  <div :class="['k-search', disabled ? 'is-disabled' : '']">
+    <Icon name="search" :size="16" class="k-search-ico" />
+    <input class="k-search-input" :value="modelValue" :placeholder="placeholder" :disabled="disabled"
       @input="$emit('update:modelValue', $event.target.value)" @keydown.enter="$emit('search', modelValue)" />
-    <button v-if="modelValue" type="button" class="kui-search-clear" @click="$emit('update:modelValue','')"><Icon name="close" :size="14" /></button>
+    <button v-if="modelValue" type="button" class="k-search-clear" @click="$emit('update:modelValue','')"><Icon name="close" :size="14" /></button>
   </div>
 </template>

@@ -53,44 +53,44 @@ const style = computed(() => (props.inputWidth ? { width: typeof props.inputWidt
 
 <template>
   <!-- edit: select -->
-  <span v-if="editing && editor === 'select'" class="ie-edit ie-edit-select">
-    <select ref="elRef" :class="['ie-input', 'ie-select', mono ? 'mono' : '']" :style="style"
+  <span v-if="editing && editor === 'select'" class="k-inline-edit-edit k-inline-edit-edit-select">
+    <select ref="elRef" :class="['k-inline-edit-input', 'k-inline-edit-select', mono ? 'mono' : '']" :style="style"
       :value="draft ?? ''" @change="finish($event.target.value)" @blur="editing = false"
       @keydown.esc="cancel">
       <option v-for="o in options" :key="o.value" :value="o.value">{{ o.label }}</option>
     </select>
-    <Icon name="chevronDown" :size="14" class="ie-select-caret" />
+    <Icon name="chevronDown" :size="14" class="k-inline-edit-select-caret" />
   </span>
 
   <!-- edit: textarea -->
   <textarea v-else-if="editing && editor === 'textarea'" ref="elRef"
-    :class="['ie-input', 'ie-area', mono ? 'mono' : '']" :style="style" :rows="3" :value="draft ?? ''"
+    :class="['k-inline-edit-input', 'k-inline-edit-area', mono ? 'mono' : '']" :style="style" :rows="3" :value="draft ?? ''"
     @input="draft = $event.target.value" @blur="finish($event.target.value)"
     @keydown.esc="cancel" @keydown.enter.exact.prevent="finish($event.target.value)"></textarea>
 
   <!-- edit: date/datetime -->
   <input v-else-if="editing && (editor === 'date' || editor === 'datetime')" ref="elRef"
-    :class="['ie-input', mono ? 'mono' : '']" :style="style"
+    :class="['k-inline-edit-input', mono ? 'mono' : '']" :style="style"
     :type="editor === 'datetime' ? 'datetime-local' : 'date'" :value="draft ?? ''"
     @input="draft = $event.target.value" @blur="finish($event.target.value)"
     @keydown.enter="finish($event.target.value)" @keydown.esc="cancel" />
 
   <!-- edit: text/number -->
-  <input v-else-if="editing" ref="elRef" :class="['ie-input', mono ? 'mono' : '']" :style="style"
+  <input v-else-if="editing" ref="elRef" :class="['k-inline-edit-input', mono ? 'mono' : '']" :style="style"
     type="text" :inputmode="editor === 'number' ? 'decimal' : undefined" :value="draft ?? ''"
     @input="draft = $event.target.value" @blur="finish($event.target.value)"
     @keydown.enter="finish($event.target.value)" @keydown.esc="cancel" />
 
   <!-- read -->
   <button v-else type="button"
-    :class="['ie', `ie-${align}`, empty ? 'is-empty' : '', mono ? 'mono' : '']"
+    :class="['k-inline-edit', `k-inline-edit-${align}`, empty ? 'is-empty' : '', mono ? 'mono' : '']"
     @click="startEdit" title="Нажмите, чтобы изменить">
-    <i v-if="prefix && !empty" class="ie-prefix">{{ prefix }}</i>
-    <span class="ie-text">
+    <i v-if="prefix && !empty" class="k-inline-edit-prefix">{{ prefix }}</i>
+    <span class="k-inline-edit-text">
       <slot v-if="$slots.display && !empty" name="display" :value="value">{{ shownText }}</slot>
       <template v-else>{{ shownText }}</template>
     </span>
-    <i v-if="suffix && !empty" class="ie-suffix">{{ suffix }}</i>
-    <Icon :name="empty ? 'plus' : 'edit'" :size="12" class="ie-pencil" />
+    <i v-if="suffix && !empty" class="k-inline-edit-suffix">{{ suffix }}</i>
+    <Icon :name="empty ? 'plus' : 'edit'" :size="12" class="k-inline-edit-pencil" />
   </button>
 </template>

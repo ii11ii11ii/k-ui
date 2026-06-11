@@ -18,11 +18,11 @@ function onClick(e){ if (props.disabled || props.loading) return; emit('click', 
 
 <template>
   <button :type="type" :disabled="disabled || loading"
-    :class="['btn', 'btn-' + variant, size === 'sm' ? 'btn-sm' : '', block ? 'btn-block' : '', active ? 'is-active' : '', loading ? 'is-loading' : '']"
+    :class="['k-button', 'k-button-' + variant, size === 'sm' ? 'k-button-sm' : '', block ? 'k-button-block' : '', active ? 'is-active' : '', loading ? 'is-loading' : '']"
     @click="onClick">
-    <span v-if="loading" class="btn-spin" aria-hidden="true"></span>
+    <span v-if="loading" class="k-button-spin" aria-hidden="true"></span>
     <Icon v-else-if="icon" :name="icon" :size="size === 'sm' ? 15 : 16" />
-    <span v-if="$slots.default" class="btn-label"><slot /></span>
+    <span v-if="$slots.default" class="k-button-label"><slot /></span>
     <Icon v-if="iconRight && !loading" :name="iconRight" :size="size === 'sm' ? 15 : 16" />
   </button>
 </template>

@@ -48,65 +48,65 @@ const active = computed(() => kmtFilterActive(props.value))
 
 <template>
   <!-- text -->
-  <div v-if="f.kind === 'text'" class="flt-text">
-    <Icon name="search" :size="15" class="flt-text-ico" />
-    <input class="flt-text-input" :autofocus="autoFocus" :value="value || ''"
+  <div v-if="f.kind === 'text'" class="k-filter-text">
+    <Icon name="search" :size="15" class="k-filter-text-ico" />
+    <input class="k-filter-text-input" :autofocus="autoFocus" :value="value || ''"
       @input="emit('change', $event.target.value)" :placeholder="f.placeholder || `Поиск: ${col.label.toLowerCase()}`" />
-    <button v-if="active" class="flt-text-clear" title="Очистить" @click="emit('clear')"><Icon name="close" :size="13" /></button>
+    <button v-if="active" class="k-filter-text-clear" title="Очистить" @click="emit('clear')"><Icon name="close" :size="13" /></button>
   </div>
 
   <!-- date -->
-  <div v-else-if="f.kind === 'date'" class="flt-date">
-    <div class="flt-presets">
+  <div v-else-if="f.kind === 'date'" class="k-filter-date">
+    <div class="k-filter-presets">
       <button v-for="[k, l] in [['today','Сегодня'],['week','Неделя'],['month','Месяц']]" :key="k"
-        :class="['flt-preset', value && value.preset === k ? 'is-on' : '']" @click="setPreset(k)">{{ l }}</button>
+        :class="['k-filter-preset', value && value.preset === k ? 'is-on' : '']" @click="setPreset(k)">{{ l }}</button>
     </div>
     <Calendar :value="value" @pick="pickDay" />
-    <div class="flt-foot">
-      <button class="flt-clear-btn" :disabled="!active" @click="emit('clear')"><Icon name="close" :size="13" />Сбросить</button>
+    <div class="k-filter-foot">
+      <button class="k-filter-clear-btn" :disabled="!active" @click="emit('clear')"><Icon name="close" :size="13" />Сбросить</button>
     </div>
   </div>
 
   <!-- presence -->
-  <div v-else-if="f.kind === 'presence'" class="presence-flt">
-    <button :class="['pf-x', active ? 'is-on' : '']" title="Сбросить" :disabled="!active" @click="emit('clear')"><Icon name="close" :size="13" :stroke="2.4" /></button>
-    <div class="pf-seg">
-      <button :class="['pf-opt', pv.mode === 'has' ? 'is-on' : '']" @click="setMode('has')">По наличию</button>
-      <button :class="['pf-opt', pv.mode === 'none' ? 'is-on' : '']" @click="setMode('none')">По отсутствию</button>
+  <div v-else-if="f.kind === 'presence'" class="k-filter-presence">
+    <button :class="['k-filter-presence-x', active ? 'is-on' : '']" title="Сбросить" :disabled="!active" @click="emit('clear')"><Icon name="close" :size="13" :stroke="2.4" /></button>
+    <div class="k-filter-presence-seg">
+      <button :class="['k-filter-presence-opt', pv.mode === 'has' ? 'is-on' : '']" @click="setMode('has')">По наличию</button>
+      <button :class="['k-filter-presence-opt', pv.mode === 'none' ? 'is-on' : '']" @click="setMode('none')">По отсутствию</button>
     </div>
-    <input class="pf-num" :autofocus="autoFocus" :value="pv.number || ''" :placeholder="f.placeholder || 'По номеру'" @input="setNumber($event.target.value)" />
+    <input class="k-filter-presence-num" :autofocus="autoFocus" :value="pv.number || ''" :placeholder="f.placeholder || 'По номеру'" @input="setNumber($event.target.value)" />
   </div>
 
   <!-- choice -->
-  <div v-else-if="f.kind === 'choice'" class="choice-flt">
-    <button :class="['pf-x', active ? 'is-on' : '']" title="Сбросить" :disabled="!active" @click="emit('clear')"><Icon name="close" :size="13" :stroke="2.4" /></button>
-    <div class="pf-seg pf-seg-wrap">
+  <div v-else-if="f.kind === 'choice'" class="k-filter-choice">
+    <button :class="['k-filter-presence-x', active ? 'is-on' : '']" title="Сбросить" :disabled="!active" @click="emit('clear')"><Icon name="close" :size="13" :stroke="2.4" /></button>
+    <div class="k-filter-presence-seg k-filter-presence-seg-wrap">
       <button v-for="o in (options.length ? options : (f.options || []))" :key="o.value"
-        :class="['pf-opt', value === o.value ? 'is-on' : '']" @click="emit('change', value === o.value ? '' : o.value)">{{ o.label }}</button>
+        :class="['k-filter-presence-opt', value === o.value ? 'is-on' : '']" @click="emit('change', value === o.value ? '' : o.value)">{{ o.label }}</button>
     </div>
   </div>
 
   <!-- select / combo -->
-  <div v-else class="flt-select">
-    <div class="flt-text">
-      <Icon name="search" :size="15" class="flt-text-ico" />
-      <input class="flt-text-input" :autofocus="autoFocus" v-model="q" :placeholder="f.placeholder || 'Поиск по списку…'" />
-      <button v-if="q" class="flt-text-clear" title="Очистить поиск" @click="q = ''"><Icon name="close" :size="13" /></button>
+  <div v-else class="k-filter-select">
+    <div class="k-filter-text">
+      <Icon name="search" :size="15" class="k-filter-text-ico" />
+      <input class="k-filter-text-input" :autofocus="autoFocus" v-model="q" :placeholder="f.placeholder || 'Поиск по списку…'" />
+      <button v-if="q" class="k-filter-text-clear" title="Очистить поиск" @click="q = ''"><Icon name="close" :size="13" /></button>
     </div>
-    <div class="flt-options" role="listbox">
-      <div v-if="list.length === 0" class="flt-empty">Ничего не найдено</div>
+    <div class="k-filter-options" role="listbox">
+      <div v-if="list.length === 0" class="k-filter-empty">Ничего не найдено</div>
       <button v-for="o in list" :key="o.value" role="option" :aria-selected="isOn(o.value)"
-        :class="['flt-opt', isOn(o.value) ? 'is-on' : '']" @click="pick(o.value)">
-        <span :class="['flt-opt-box', f.multi ? 'is-check' : 'is-radio']">
+        :class="['k-filter-opt', isOn(o.value) ? 'is-on' : '']" @click="pick(o.value)">
+        <span :class="['k-filter-opt-box', f.multi ? 'is-check' : 'is-radio']">
           <Icon v-if="isOn(o.value) && f.multi" name="checkMark" :size="11" :stroke="3" />
-          <span v-else-if="isOn(o.value)" class="flt-opt-dot"></span>
+          <span v-else-if="isOn(o.value)" class="k-filter-opt-dot"></span>
         </span>
-        <span class="flt-opt-label" :title="o.label">{{ o.label }}</span>
+        <span class="k-filter-opt-label" :title="o.label">{{ o.label }}</span>
       </button>
     </div>
-    <div v-if="active" class="flt-foot">
-      <button class="flt-clear-btn" @click="emit('clear')"><Icon name="close" :size="13" />Сбросить</button>
-      <span v-if="f.multi" class="flt-count">{{ sel.length }} выбрано</span>
+    <div v-if="active" class="k-filter-foot">
+      <button class="k-filter-clear-btn" @click="emit('clear')"><Icon name="close" :size="13" />Сбросить</button>
+      <span v-if="f.multi" class="k-filter-count">{{ sel.length }} выбрано</span>
     </div>
   </div>
 </template>

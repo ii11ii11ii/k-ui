@@ -12,9 +12,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="kui-stat">
-    <div class="kui-stat-label"><Icon v-if="icon" :name="icon" :size="14" />{{ label }}</div>
-    <div class="kui-stat-value mono nowrap"><span v-if="prefix" class="kui-stat-affix">{{ prefix }}</span>{{ value }}<span v-if="suffix" class="kui-stat-affix">{{ suffix }}</span></div>
-    <div v-if="trend != null" :class="['kui-stat-trend', trend >= 0 ? 'is-up' : 'is-down']">{{ trend >= 0 ? '▲' : '▼' }} {{ Math.abs(trend) }}%</div>
+  <div class="k-stat">
+    <div class="k-stat-label"><Icon v-if="icon" :name="icon" :size="14" />{{ label }}</div>
+    <div class="k-stat-value mono nowrap"><span v-if="prefix" class="k-stat-affix">{{ prefix }}</span>{{ value }}<span v-if="suffix" class="k-stat-affix">{{ suffix }}</span></div>
+    <div v-if="trend != null" :class="['k-stat-trend', trend >= 0 ? 'is-up' : 'is-down']">{{ trend >= 0 ? '▲' : '▼' }} {{ Math.abs(trend) }}%</div>
   </div>
 </template>

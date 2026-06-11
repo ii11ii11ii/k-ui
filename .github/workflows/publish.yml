@@ -1,4 +1,4 @@
-name: Publish @ii11ii11ii/k-ui
+name: Publish @ii11/k-ui
 
 # Публикация в ПУБЛИЧНЫЙ npm-реестр (npmjs.com) — установка без токена.
 # Требуется секрет репозитория NPM_TOKEN (Automation-токен с npmjs.com).

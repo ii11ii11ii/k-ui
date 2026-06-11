@@ -15,10 +15,10 @@ function copy(e: Event){ e.stopPropagation(); try { navigator.clipboard && navig
 </script>
 
 <template>
-  <span :class="['code-chip', 'code-chip-' + size, muted ? 'is-muted' : '', copied ? 'is-copied' : '']" :title="code">
-    <Icon v-if="icon" :name="icon" :size="size === 'lg' ? 16 : size === 'sm' ? 12 : 14" class="code-chip-ico" />
-    <span class="code-chip-text mono truncate">{{ code }}</span>
-    <button type="button" class="code-chip-copy" :title="copied ? 'Скопировано' : 'Скопировать код'" aria-label="Скопировать код" @click="copy">
+  <span :class="['k-code-chip', 'k-code-chip-' + size, muted ? 'is-muted' : '', copied ? 'is-copied' : '']" :title="code">
+    <Icon v-if="icon" :name="icon" :size="size === 'lg' ? 16 : size === 'sm' ? 12 : 14" class="k-code-chip-ico" />
+    <span class="k-code-chip-text mono truncate">{{ code }}</span>
+    <button type="button" class="k-code-chip-copy" :title="copied ? 'Скопировано' : 'Скопировать код'" aria-label="Скопировать код" @click="copy">
       <Icon :name="copied ? 'checkMark' : 'copy'" :size="size === 'lg' ? 15 : 13" :stroke="copied ? 3 : 2" />
     </button>
   </span>

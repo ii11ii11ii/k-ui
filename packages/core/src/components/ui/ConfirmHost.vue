@@ -19,19 +19,19 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey, true))
 
 <template>
   <teleport to="body">
-    <div v-if="confirmState.open" class="confirm-overlay" @mousedown="resolveConfirm(false)">
-      <div class="confirm-box" role="alertdialog" aria-modal="true"
+    <div v-if="confirmState.open" class="k-confirm-overlay" @mousedown="resolveConfirm(false)">
+      <div class="k-confirm-box" role="alertdialog" aria-modal="true"
         :aria-label="confirmState.opts.title || 'Подтверждение'" @mousedown.stop>
         <span v-if="confirmState.opts.icon !== null"
-          :class="['confirm-ico', confirmState.opts.danger !== false ? 'is-danger' : '']">
+          :class="['k-confirm-ico', confirmState.opts.danger !== false ? 'is-danger' : '']">
           <Icon :name="confirmState.opts.icon || 'trash'" :size="22" />
         </span>
-        <div class="confirm-title">{{ confirmState.opts.title || 'Подтвердите действие' }}</div>
-        <div v-if="confirmState.opts.message" class="confirm-msg">{{ confirmState.opts.message }}</div>
-        <div class="confirm-acts">
+        <div class="k-confirm-title">{{ confirmState.opts.title || 'Подтвердите действие' }}</div>
+        <div v-if="confirmState.opts.message" class="k-confirm-msg">{{ confirmState.opts.message }}</div>
+        <div class="k-confirm-acts">
           <button v-if="confirmState.opts.cancelLabel !== null && confirmState.opts.cancelLabel !== false"
-            class="btn btn-ghost" @click="resolveConfirm(false)">{{ confirmState.opts.cancelLabel || 'Отмена' }}</button>
-          <button :class="['btn', confirmState.opts.danger !== false ? 'btn-danger' : 'btn-primary']"
+            class="k-button k-button-ghost" @click="resolveConfirm(false)">{{ confirmState.opts.cancelLabel || 'Отмена' }}</button>
+          <button :class="['k-button', confirmState.opts.danger !== false ? 'k-button-danger' : 'k-button-primary']"
             autofocus @click="resolveConfirm(true)">
             <Icon :name="confirmState.opts.confirmIcon || (confirmState.opts.danger !== false ? 'trash' : 'check')" :size="15" />
             {{ confirmState.opts.confirmLabel || 'Удалить' }}

@@ -23,14 +23,14 @@ function gen(){ set(genPassword(12)); show.value = true }
 </script>
 
 <template>
-  <span :class="['pw-field', show ? 'is-shown' : '', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
-    <span class="pw-ico"><Icon name="key" :size="15" /></span>
-    <input :class="['pw-input', show ? 'mono' : '']" :type="show ? 'text' : 'password'" :value="modelValue"
+  <span :class="['k-password-field', show ? 'is-shown' : '', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
+    <span class="k-password-field-ico"><Icon name="key" :size="15" /></span>
+    <input :class="['k-password-field-input', show ? 'mono' : '']" :type="show ? 'text' : 'password'" :value="modelValue"
       :placeholder="placeholder" autocomplete="new-password" spellcheck="false" :disabled="disabled" @input="set($event.target.value)" />
-    <span class="pw-btns">
-      <button v-if="modelValue" type="button" class="pw-btn" title="Скопировать" @click="copy"><Icon name="copy" :size="14" /></button>
-      <button type="button" class="pw-btn" :title="show ? 'Скрыть' : 'Показать'" @click="show = !show"><Icon :name="show ? 'eyeOff' : 'eye'" :size="15" /></button>
-      <button v-if="allowGenerate" type="button" class="pw-btn pw-gen" title="Сгенерировать пароль" @click="gen"><Icon name="refresh" :size="14" /></button>
+    <span class="k-password-field-btns">
+      <button v-if="modelValue" type="button" class="k-password-field-btn" title="Скопировать" @click="copy"><Icon name="copy" :size="14" /></button>
+      <button type="button" class="k-password-field-btn" :title="show ? 'Скрыть' : 'Показать'" @click="show = !show"><Icon :name="show ? 'eyeOff' : 'eye'" :size="15" /></button>
+      <button v-if="allowGenerate" type="button" class="k-password-field-btn k-password-field-gen" title="Сгенерировать пароль" @click="gen"><Icon name="refresh" :size="14" /></button>
     </span>
   </span>
 </template>

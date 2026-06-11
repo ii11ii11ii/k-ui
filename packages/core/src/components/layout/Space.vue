@@ -12,5 +12,5 @@ const gap = computed(() => typeof props.size === 'number' ? props.size : (sizes[
 </script>
 
 <template>
-  <div class="kui-space" :style="{ display: 'inline-flex', flexDirection: direction === 'vertical' ? 'column' : 'row', gap: gap + 'px', alignItems: align, flexWrap: wrap ? 'wrap' : 'nowrap' }"><slot /></div>
+  <div class="k-space" :style="{ display: 'inline-flex', flexDirection: direction === 'vertical' ? 'column' : 'row', gap: gap + 'px', alignItems: align, flexWrap: wrap ? 'wrap' : 'nowrap' }"><slot /></div>
 </template>

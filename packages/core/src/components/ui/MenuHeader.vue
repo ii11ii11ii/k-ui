@@ -10,11 +10,11 @@ defineProps({
 </script>
 
 <template>
-  <div class="menu-head">
+  <div class="k-menu-head">
     <Avatar v-if="avatar" :name="avatar" :size="38" />
-    <div class="menu-head-meta">
-      <span class="menu-head-name">{{ name }}</span>
-      <span v-if="sub" class="menu-head-sub">{{ sub }}</span>
+    <div class="k-menu-head-meta">
+      <span class="k-menu-head-name">{{ name }}</span>
+      <span v-if="sub" class="k-menu-head-sub">{{ sub }}</span>
     </div>
   </div>
 </template>

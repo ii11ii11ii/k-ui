@@ -22,12 +22,12 @@ function toggle(){
 </script>
 
 <template>
-  <label :class="['kui-check', checked ? 'is-on' : '', indeterminate ? 'is-indet' : '', isDisabled ? 'is-disabled' : '']">
-    <span class="kui-check-box" role="checkbox" :aria-checked="indeterminate ? 'mixed' : checked" tabindex="0"
+  <label :class="['k-check', checked ? 'is-on' : '', indeterminate ? 'is-indet' : '', isDisabled ? 'is-disabled' : '']">
+    <span class="k-check-box" role="checkbox" :aria-checked="indeterminate ? 'mixed' : checked" tabindex="0"
       @click="toggle" @keydown.space.prevent="toggle" @keydown.enter.prevent="toggle">
-      <Icon v-if="checked && !indeterminate" name="checkMark" :size="13" class="kui-check-mark" />
-      <span v-else-if="indeterminate" class="kui-check-dash"></span>
+      <Icon v-if="checked && !indeterminate" name="checkMark" :size="13" class="k-check-mark" />
+      <span v-else-if="indeterminate" class="k-check-dash"></span>
     </span>
-    <span v-if="label || $slots.default" class="kui-check-label"><slot>{{ label }}</slot></span>
+    <span v-if="label || $slots.default" class="k-check-label"><slot>{{ label }}</slot></span>
   </label>
 </template>

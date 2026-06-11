@@ -16,11 +16,11 @@ function add(){ const arr = props.modelValue.slice(); arr.push(clone(props.templ
 </script>
 
 <template>
-  <div class="kui-repeater">
-    <div v-for="(item, i) in modelValue" :key="i" class="kui-repeater-row">
-      <div class="kui-repeater-main"><slot name="row" :item="item" :index="i" :update="(v: any) => update(i, v)">{{ item }}</slot></div>
-      <button type="button" class="kui-repeater-del" :disabled="modelValue.length <= min" title="Удалить" @click="remove(i)"><Icon name="trash" :size="15" /></button>
+  <div class="k-repeater">
+    <div v-for="(item, i) in modelValue" :key="i" class="k-repeater-row">
+      <div class="k-repeater-main"><slot name="row" :item="item" :index="i" :update="(v: any) => update(i, v)">{{ item }}</slot></div>
+      <button type="button" class="k-repeater-del" :disabled="modelValue.length <= min" title="Удалить" @click="remove(i)"><Icon name="trash" :size="15" /></button>
     </div>
-    <button type="button" class="kui-repeater-add" @click="add"><Icon name="plus" :size="15" />{{ addLabel }}</button>
+    <button type="button" class="k-repeater-add" @click="add"><Icon name="plus" :size="15" />{{ addLabel }}</button>
   </div>
 </template>

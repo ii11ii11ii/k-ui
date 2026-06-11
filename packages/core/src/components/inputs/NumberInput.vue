@@ -24,10 +24,10 @@ const canInc = computed(() => !props.disabled && (props.max==null || (props.mode
 </script>
 
 <template>
-  <div :class="['kui-num', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
-    <button type="button" class="kui-num-btn" :disabled="!canDec" tabindex="-1" @click="bump(-1)"><Icon name="minus" :size="15" /></button>
-    <input :class="['kui-num-input', mono ? 'mono' : '']" :value="modelValue==null ? '' : modelValue" :placeholder="placeholder" :disabled="disabled" inputmode="decimal" @input="onInput" />
-    <span v-if="suffix" class="kui-num-suffix">{{ suffix }}</span>
-    <button type="button" class="kui-num-btn" :disabled="!canInc" tabindex="-1" @click="bump(1)"><Icon name="plus" :size="15" /></button>
+  <div :class="['k-num', invalid ? 'is-invalid' : '', disabled ? 'is-disabled' : '']">
+    <button type="button" class="k-num-btn" :disabled="!canDec" tabindex="-1" @click="bump(-1)"><Icon name="minus" :size="15" /></button>
+    <input :class="['k-num-input', mono ? 'mono' : '']" :value="modelValue==null ? '' : modelValue" :placeholder="placeholder" :disabled="disabled" inputmode="decimal" @input="onInput" />
+    <span v-if="suffix" class="k-num-suffix">{{ suffix }}</span>
+    <button type="button" class="k-num-btn" :disabled="!canInc" tabindex="-1" @click="bump(1)"><Icon name="plus" :size="15" /></button>
   </div>
 </template>

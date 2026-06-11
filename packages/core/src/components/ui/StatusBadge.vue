@@ -26,8 +26,8 @@ const size = computed(() => props.size || 'md')
 </script>
 
 <template>
-  <span :class="`status-badge st-${size}`" :style="{ background: tone.bg, color: tone.fg }">
-    <span class="status-dot" :style="{ background: tone.dot }"></span>
+  <span :class="`k-status-badge k-status-badge-${size}`" :style="{ background: tone.bg, color: tone.fg }">
+    <span class="k-status-badge-dot" :style="{ background: tone.dot }"></span>
     {{ resolved.label }}
   </span>
 </template>

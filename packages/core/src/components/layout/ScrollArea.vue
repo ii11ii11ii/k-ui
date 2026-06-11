@@ -5,5 +5,5 @@ const dim = (v: any) => (typeof v === 'number' ? v + 'px' : v)
 </script>
 
 <template>
-  <div :class="['kui-scroll', horizontal ? 'is-horizontal' : '']" :style="{ maxHeight: dim(maxHeight) }"><slot /></div>
+  <div :class="['k-scroll', horizontal ? 'is-horizontal' : '']" :style="{ maxHeight: dim(maxHeight) }"><slot /></div>
 </template>

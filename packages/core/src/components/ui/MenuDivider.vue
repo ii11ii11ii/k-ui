@@ -1,3 +1,3 @@
 <template>
-  <div class="menu-divider"></div>
+  <div class="k-menu-divider"></div>
 </template>

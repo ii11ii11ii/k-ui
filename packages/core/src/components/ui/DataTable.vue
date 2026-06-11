@@ -79,8 +79,8 @@ function keyOf(row, i) { return props.rowKey ? props.rowKey(row) : i }
 </script>
 
 <template>
-  <div :class="`table-wrap ${className}`" ref="wrapRef">
-    <table :class="`data-table ${tableClassName}`">
+  <div :class="`k-table-wrap ${className}`" ref="wrapRef">
+    <table :class="`k-table ${tableClassName}`">
       <thead>
         <tr>
           <th v-for="c in layout.vis" :key="c.key" :data-col="c.key"
@@ -95,7 +95,7 @@ function keyOf(row, i) { return props.rowKey ? props.rowKey(row) : i }
         </tr>
       </thead>
       <tbody>
-        <tr v-if="rows.length === 0" class="dt-empty-row"><td :colspan="layout.vis.length"><div class="dt-empty">{{ emptyText }}</div></td></tr>
+        <tr v-if="rows.length === 0" class="k-table-empty-row"><td :colspan="layout.vis.length"><div class="k-table-empty">{{ emptyText }}</div></td></tr>
         <template v-for="(row, i) in rows" :key="keyOf(row, i)">
           <tr :data-i="i"
             :class="[rowClassName ? rowClassName(row, i) : '', selIndex === i ? 'is-sel' : '', isExpanded && isExpanded(row) ? 'is-expanded' : '']"
@@ -109,8 +109,8 @@ function keyOf(row, i) { return props.rowKey ? props.rowKey(row) : i }
               <slot name="cell" :column="c" :row="row" :index="i">{{ row[c.key] }}</slot>
             </td>
           </tr>
-          <tr v-if="isExpanded && isExpanded(row)" class="dt-expanded">
-            <td :colspan="layout.vis.length"><div class="dt-expanded-inner"><slot name="expanded" :row="row" /></div></td>
+          <tr v-if="isExpanded && isExpanded(row)" class="k-table-expanded">
+            <td :colspan="layout.vis.length"><div class="k-table-expanded-inner"><slot name="expanded" :row="row" /></div></td>
           </tr>
         </template>
       </tbody>

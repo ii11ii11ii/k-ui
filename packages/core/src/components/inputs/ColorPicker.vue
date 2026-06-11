@@ -11,10 +11,10 @@ function pick(c: string){ if (props.disabled) return; emit('update:modelValue', 
 </script>
 
 <template>
-  <div :class="['kui-colorpicker', disabled ? 'is-disabled' : '']">
-    <button v-for="c in swatches" :key="c" type="button" :class="['kui-color-sw', modelValue && modelValue.toLowerCase() === c.toLowerCase() ? 'is-on' : '']"
+  <div :class="['k-colorpicker', disabled ? 'is-disabled' : '']">
+    <button v-for="c in swatches" :key="c" type="button" :class="['k-color-sw', modelValue && modelValue.toLowerCase() === c.toLowerCase() ? 'is-on' : '']"
       :style="{ background: c }" :title="c" @click="pick(c)"></button>
-    <label v-if="allowCustom" class="kui-color-custom" :style="{ background: modelValue || 'transparent' }" title="Произвольный цвет">
+    <label v-if="allowCustom" class="k-color-custom" :style="{ background: modelValue || 'transparent' }" title="Произвольный цвет">
       <input type="color" :value="modelValue || '#000000'" :disabled="disabled" @input="pick($event.target.value)" />
     </label>
   </div>

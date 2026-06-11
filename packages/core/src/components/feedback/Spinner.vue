@@ -9,8 +9,8 @@ const dim = (v: any) => (typeof v === 'number' ? v + 'px' : v)
 </script>
 
 <template>
-  <span class="kui-spinner" role="status" :aria-label="label || 'Загрузка'">
-    <span class="kui-spinner-ring" :style="{ width: dim(props.size), height: dim(props.size), borderWidth: stroke + 'px' }"></span>
-    <span v-if="label" class="kui-spinner-label">{{ label }}</span>
+  <span class="k-spinner" role="status" :aria-label="label || 'Загрузка'">
+    <span class="k-spinner-ring" :style="{ width: dim(props.size), height: dim(props.size), borderWidth: stroke + 'px' }"></span>
+    <span v-if="label" class="k-spinner-label">{{ label }}</span>
   </span>
 </template>

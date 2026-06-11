@@ -1,6 +1,6 @@
 /* AUTO-GENERATED barrel. */
-export { default as Breadcrumb } from './Breadcrumb.vue'
-export { default as BreadcrumbItem } from './BreadcrumbItem.vue'
-export { default as MiniPager } from './MiniPager.vue'
-export { default as Steps } from './Steps.vue'
-export { default as Tabs } from './Tabs.vue'
+export { default as KBreadcrumb } from './Breadcrumb.vue'
+export { default as KBreadcrumbItem } from './BreadcrumbItem.vue'
+export { default as KMiniPager } from './MiniPager.vue'
+export { default as KSteps } from './Steps.vue'
+export { default as KTabs } from './Tabs.vue'

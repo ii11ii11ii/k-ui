@@ -27,14 +27,14 @@ const widthStyle = computed(() => props.width == null ? null : { width: typeof p
 </script>
 
 <template>
-  <div :class="['stepper', disabled ? 'is-disabled' : '', invalid ? 'is-invalid' : '']" :style="widthStyle">
-    <input :class="['stepper-input', mono ? 'mono' : '', align === 'right' ? 'ta-right' : '']" type="text" inputmode="decimal"
+  <div :class="['k-stepper', disabled ? 'is-disabled' : '', invalid ? 'is-invalid' : '']" :style="widthStyle">
+    <input :class="['k-stepper-input', mono ? 'mono' : '', align === 'right' ? 'ta-right' : '']" type="text" inputmode="decimal"
       :value="modelValue == null ? '' : modelValue" :placeholder="placeholder" :disabled="disabled"
       @input="set($event.target.value)" @blur="onBlur" @keydown.up.prevent="bump(1)" @keydown.down.prevent="bump(-1)" />
-    <span v-if="suffix" class="stepper-suffix">{{ suffix }}</span>
-    <span class="stepper-btns">
-      <button type="button" class="stepper-btn stepper-up" tabindex="-1" :disabled="disabled || (max != null && cur != null && cur >= max)" aria-label="Увеличить" @click="bump(1)"><Icon name="chevronDown" :size="12" /></button>
-      <button type="button" class="stepper-btn" tabindex="-1" :disabled="disabled || (min != null && cur != null && cur <= min)" aria-label="Уменьшить" @click="bump(-1)"><Icon name="chevronDown" :size="12" /></button>
+    <span v-if="suffix" class="k-stepper-suffix">{{ suffix }}</span>
+    <span class="k-stepper-btns">
+      <button type="button" class="k-stepper-btn k-stepper-up" tabindex="-1" :disabled="disabled || (max != null && cur != null && cur >= max)" aria-label="Увеличить" @click="bump(1)"><Icon name="chevronDown" :size="12" /></button>
+      <button type="button" class="k-stepper-btn" tabindex="-1" :disabled="disabled || (min != null && cur != null && cur <= min)" aria-label="Уменьшить" @click="bump(-1)"><Icon name="chevronDown" :size="12" /></button>
     </span>
   </div>
 </template>

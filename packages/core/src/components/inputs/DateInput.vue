@@ -13,7 +13,7 @@ const native: Record<string,string> = { date: 'date', datetime: 'datetime-local'
 </script>
 
 <template>
-  <input :class="['fld', 'mono', invalid ? 'is-invalid' : '']" :type="native[type] || 'date'" :value="modelValue"
+  <input :class="['k-input-field', 'mono', invalid ? 'is-invalid' : '']" :type="native[type] || 'date'" :value="modelValue"
     :min="min || undefined" :max="max || undefined" :disabled="disabled"
     @input="$emit('update:modelValue', $event.target.value)" @change="$emit('change', $event.target.value)" />
 </template>

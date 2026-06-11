@@ -15,17 +15,17 @@ const pageList = computed(() => Array.from({ length: pages.value }, (_, i) => i 
 </script>
 
 <template>
-  <div class="pager">
-    <div class="pager-nav">
-      <button class="pager-btn" :disabled="cur <= 1" title="Назад"><Icon name="chevronLeft" :size="15" /></button>
-      <button v-for="p in pageList" :key="p" :class="['pager-btn', p === cur ? 'is-on' : '']">{{ p }}</button>
-      <button class="pager-btn" :disabled="cur >= pages" title="Вперёд"><Icon name="chevronRight" :size="15" /></button>
+  <div class="k-pager">
+    <div class="k-pager-nav">
+      <button class="k-pager-btn" :disabled="cur <= 1" title="Назад"><Icon name="chevronLeft" :size="15" /></button>
+      <button v-for="p in pageList" :key="p" :class="['k-pager-btn', p === cur ? 'is-on' : '']">{{ p }}</button>
+      <button class="k-pager-btn" :disabled="cur >= pages" title="Вперёд"><Icon name="chevronRight" :size="15" /></button>
     </div>
-    <label class="pager-size">
-      <select class="fld" v-model.number="size">
+    <label class="k-pager-size">
+      <select class="k-input-field" v-model.number="size">
         <option v-for="s in sizes" :key="s" :value="s">{{ s }} на странице</option>
       </select>
     </label>
-    <span class="pager-total">Всего <b>{{ total }}</b></span>
+    <span class="k-pager-total">Всего <b>{{ total }}</b></span>
   </div>
 </template>

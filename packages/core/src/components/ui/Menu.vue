@@ -13,11 +13,11 @@ const close = () => (open.value = false)
 </script>
 
 <template>
-  <div class="menu-wrap">
+  <div class="k-menu-wrap">
     <slot name="trigger" :open="open" :toggle="toggle" :close="close" />
     <template v-if="open">
       <div class="pop-backdrop" @click="close"></div>
-      <div :class="`menu-pop align-${align}`" role="menu" @click="close"
+      <div :class="`k-menu-pop align-${align}`" role="menu" @click="close"
         :style="width ? { minWidth: typeof width === 'number' ? width + 'px' : width } : null">
         <slot />
       </div>

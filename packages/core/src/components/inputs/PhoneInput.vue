@@ -27,21 +27,21 @@ function onCopy(e: any){ const full = nat.value ? country.value.dial + nat.value
 </script>
 
 <template>
-  <span :class="['phone-input', 'phone-fld', open ? 'is-open' : '', disabled ? 'is-disabled' : '', invalid ? 'is-invalid' : '']">
-    <button type="button" class="phone-cc" :disabled="disabled" :title="country.name + ' · +' + country.dial" @click="open = !open">
-      <span class="phone-cc-iso">{{ country.iso }}</span>
-      <span class="phone-cc-dial mono">+{{ country.dial }}</span>
-      <Icon name="chevronDown" :size="13" class="phone-cc-caret" />
+  <span :class="['k-phone-input', 'k-phone-input-fld', open ? 'is-open' : '', disabled ? 'is-disabled' : '', invalid ? 'is-invalid' : '']">
+    <button type="button" class="k-phone-input-cc" :disabled="disabled" :title="country.name + ' · +' + country.dial" @click="open = !open">
+      <span class="k-phone-input-cc-iso">{{ country.iso }}</span>
+      <span class="k-phone-input-cc-dial mono">+{{ country.dial }}</span>
+      <Icon name="chevronDown" :size="13" class="k-phone-input-cc-caret" />
     </button>
-    <input class="phone-field mono" type="tel" inputmode="tel" :disabled="disabled" :value="display"
+    <input class="k-phone-input-field mono" type="tel" inputmode="tel" :disabled="disabled" :value="display"
       :placeholder="placeholder || phonePlaceholder(country)" @input="onInput" @copy="onCopy" />
     <template v-if="open">
-      <div class="phone-backdrop" @click="open = false"></div>
-      <div class="phone-pop">
-        <div class="phone-pop-search"><Icon name="search" :size="14" /><input v-model="q" placeholder="Поиск страны или кода…" /></div>
-        <div class="phone-pop-list">
-          <button v-for="c in list" :key="c.iso" type="button" :class="['phone-pop-item', c.iso === country.iso ? 'is-on' : '']" @click="pick(c.iso)">
-            <span class="phone-pop-iso">{{ c.iso }}</span><span class="phone-pop-name">{{ c.name }}</span><span class="phone-pop-dial mono">+{{ c.dial }}</span>
+      <div class="k-phone-input-backdrop" @click="open = false"></div>
+      <div class="k-phone-input-pop">
+        <div class="k-phone-input-pop-search"><Icon name="search" :size="14" /><input v-model="q" placeholder="Поиск страны или кода…" /></div>
+        <div class="k-phone-input-pop-list">
+          <button v-for="c in list" :key="c.iso" type="button" :class="['k-phone-input-pop-item', c.iso === country.iso ? 'is-on' : '']" @click="pick(c.iso)">
+            <span class="k-phone-input-pop-iso">{{ c.iso }}</span><span class="k-phone-input-pop-name">{{ c.name }}</span><span class="k-phone-input-pop-dial mono">+{{ c.dial }}</span>
           </button>
         </div>
       </div>

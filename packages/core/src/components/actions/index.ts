@@ -1,3 +1,3 @@
 /* AUTO-GENERATED barrel. */
-export { default as Button } from './Button.vue'
-export { default as ButtonGroup } from './ButtonGroup.vue'
+export { default as KButton } from './Button.vue'
+export { default as KButtonGroup } from './ButtonGroup.vue'
